@@ -7,7 +7,7 @@
 Here I'm going to focus on the python side of things. But I want to help you understand what we're building and how everything works. Hopefully, you're able to actually change your portfolio to your own liking and showcase yourself. So I have a website for you here, we have www.google.com; if I click refresh here or enter this URL, I'm taken to this Website, but  
 
 ### Note:
-If you are a person who doesn't wanna follow the below steps to build a web for yourself, then do Hire me as a Freelancer:blush:\
+If you are a person who doesn't wanna follow the below steps to build a web for yourself, then do Hire me as a Freelancer:blush:
 I'll work it out for you:wink:
 ### How does this actually work? 
 How is my browser, ex. Google Chrome, able to display this Web page for me? I need to be connected to the Internet. So, there's some sort of data that's being transferred for me to be able to see this. So, let's explore how this works. 
@@ -32,8 +32,6 @@ It doesn't really matter as long as I can send these files back to the browser.
  
  ## Youtube Video on 'How I made this will be updated soon here! Meanwhile, check out my other projects.
  
-## Website hosted with python flask as Backend server
-https://deepaksai.pythonanywhere.com
 
 ### I successfully worked on backend with Python flask and now i'm working on frontend with very basic HTML,CSS,JS. afc, using templates!
 
