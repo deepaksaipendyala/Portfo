@@ -55,7 +55,7 @@ we are going to do this in Virtual Environment.
    
 ### We have our flask application.
 nicely,Right?We have a beautiful website. We even have contact forms which will get saved to csv and text file(encoded into server.py)\
-But there's a problem here. You see, we're running the browser as well as the server on the same computer.But this isn't real life because if I give this your URL to a friend, they're not going to be able to see it because this Address points to local hosts. It's the same thing,localhost simply means your computer, so it's not like anybody else but us can access our app. That's not very fun, is it?\
+But there's a problem here. You see, we're running the browser as well as the server on the same computer.But this isn't real life because if I give this  URL to a friend, they're not going to be able to see it because this Address points to a local host. It's the same thing,local host simply means your computer, so it's not like anybody else but us can access our app. That's not very fun, is it?\
 Ideally, we can create this app so we can send it to all our friends, our family members and possibly future employers.\
 Stick to me, We got this buddy!
 
