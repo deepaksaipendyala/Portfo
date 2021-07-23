@@ -3,7 +3,8 @@
 Here I'm going to focus on the python side of things. But I do want to help you understand what we're building and how everything works, because hopefully you're able to actually change your portfolio to your own liking and showcase yourself So I have a website for you here, we have www.google.com, If I click refresh here or enter this URL, I'm taken to this website, but  
 ### How does this actually work? 
 How is my browser, ex. Google Chrome, able to display this Web page for me? I need to be connected to the Internet. So, there's some sort of data that's being transferred for me to be able to see this. So, let's explore how this works. 
-**image** 
+![How websites work](./readme media/1.png)
+
 
 In this diagram, I'm going to attempt to just tell you exactly how it works. It's quite simple. We have our browser right here, which can be Google Chrome, SAFARI, Firefox. It doesn't matter. This browser, we're able to type into it a website or maybe Google for a website and then click on  a website when we click on a website. What happens is that through Internet, the browser makes a request all the way to another machine. And this machine, which we call a server, is located anywhere in the world. It doesn't really matter because through our Internet network, the browser is going to say, hey, this website, who owns that website or which machine can serve me the files for that website? And using some complex logic, it's going to find this server, which at the end of the day is just a computer, we're actually going to see how to deploy our own server. 
 Well, it simply says, hey, give me some data, because without data, I'm not able to display anything  on a webpage.HTML<CSS<JS is that data btw And the server, well, first of all, they communicate over something called HTTP? HTTPS because the browser and the server are two different machines, right? HTTP/HTTPS which is a secured encrypted version of communication, allows me to access data belonging to a website 
@@ -19,6 +20,7 @@ It doesn't really matter as long as I am able to send these files back to the br
  ### So, we can do that with Python, 
  but we can do that with other languages like PHP,Java, we can write a server in any type of language. 
  
+ ## Youtube Video on How this works will be updated soon here! Meanwhile check out my other projects
  
 ## Website hosted with python flask as Backend server
 https://deepaksai.pythonanywhere.com
