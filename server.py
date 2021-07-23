@@ -1,3 +1,4 @@
+# @author deepak sai pendyala
 import csv
 from flask import Flask,render_template,url_for,redirect,request
 app = Flask(__name__)
@@ -11,14 +12,14 @@ def html_page(page_name):
     return render_template(page_name)
 
 def write_to_database(data):
-    with open('database.txt',mode='a')as database:
+    with open('./Portfo/database.txt',mode='a')as database:
         name=data["name"]
         email=data["email"]
         message=data['message']
         file=database.write(f'\n {name},{email},{message}')
 
 def write_to_csv(data):
-    with open('database.csv',mode='a',newline='')as database2:
+    with open('./Portfo/database.csv',mode='a',newline='')as database2:
         name=data["name"]
         email=data["email"]
         message=data['message']
