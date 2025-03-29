@@ -12,25 +12,107 @@
 
 		<!-- Header -->
 			<header id="header">
-				<a href="index.html" class="title">My works</a>
+				<a href="index.html" class="title">Deepak Sai Pendyala</a>
 				<nav>
 					<ul>
 						<li><a href="index.html">Home</a></li>
 						<li><a href="generic.html" class="active">Projects</a></li>
-						<li><a href="https://github.com/deepaksaipendyala">Github Profile</a></li>
+						<li><a href="https://github.com/deepaksaipendyala">Github Profile</a></l
 					</ul>
 				</nav>
 			</header>
-
-		<!-- Wrapper -->
+	<!-- Wrapper -->
 			<div id="wrapper">
 
 				<!-- Main -->
 					<section id="main" class="wrapper">
 						<div class="inner">
-							<h1 class="major">Projects.exe</h1>
-							<span class="image fit"><img src="./static/images/pic04.jpg" alt="" /></span>
-							<p>Ohh! Noicee, You reached till here. I hope you liked my sense of humour :) See yaa later!</p>
+							<h1 class="major">Crop Prediction</h1>
+							<p>Hosted ML model was took down because of free limited resources in my free cloud account. Demonstration and code are hosted in my GitHub Repo </p>
+                  									<h3>Problem Statement</h3>
+									<blockquote>50% of Indian population is dependent on agriculture for livelihood. One of the major factors that affect agriculture is the quality of soil. Soil supplies essential nutrients for the crop to grow and flourish. Choosing a crop that doesn't fit with the soil type not only degrades the quality and quantity of the crop , but also deteriorates the soil of its nutrients. Unhealthy crop patterns will also damage the quality of soil which in turn again affects the yield.</blockquote>
+																		<h3>Our Solution</h3>
+									<blockquote>To tackle this problem, our team has come up with a project that could help people check the soil condition and also gives crop reccomendations depending on the soil parameters like nutrients in the soil, moisture in soil and rainfall. This project is based on a highly trained ML model to keep the the reccomendation as accurate as possible. The solution can be easily implemented and accessed by people. The user have to enter the soil parameters to check his soil compatability and it is absolutely cost effective. </blockquote>
+									<h3>Technical Stack Description</h3>
+									<blockquote>We obtained a dataset from kaggle and then we took lightgbm  classifying machine learning model and trained it using the dataset, later we created a website using HTML, CSS and JavaScript for front end and python flask for the backend, then we hosted our ML model on the website. The user should input the soil parameters and a crop recommendation is immediately given  by our trained ML model. </blockquote>
+
+							<!-- Form -->
+								<section>
+									<h2>ML Model</h2>
+									<li>Enter your email to get a copy of prediction.</li>
+									<form method="post" action="/crop_form">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="name" id="name" value="" placeholder="Name (Not mandatory)" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="email" name="email" id="email" value="" placeholder="Email (Not mandatory)" />
+											</div>
+                      </div>
+                      <br>
+                      											<h4>Data fields</h4>
+											<ul>
+												<li>N - ratio of Nitrogen content in soil -  kg/ha</li>
+												<li>P - ratio of Phosphorous content in soil - kg/ha</li>
+												<li>K - ratio of Potassium content in soil - kg/ha</li>
+										  	   <li>temperature - temperature in degree Celsius</li>
+												<li>humidity - relative humidity in %</li>
+												<li>pH - pH value of the soil</li>
+                    						    <li>rainfall - rainfall in mm</li>
+                    						    <li>All values should be numerical.</li>
+											</ul>
+                     						<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="n" id="demo-name" value="" placeholder="Enter N" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="p" id="demo-name" value="" placeholder="Enter P" />
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="k" id="demo-name" value="" placeholder="Enter K" />
+                        											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="t" id="demo-name" value="" placeholder="Enter Temperature" />
+                        											</div>
+											<div class="col-6 col-12-xsmall">
+												<input type="text" name="h" id="demo-name" value="" placeholder="Enter Humidity" />
+											</div>
+                      											<div class="col-6 col-12-xsmall">
+												<input type="text" name="ph" id="demo-name" value="" placeholder="Enter pH" />
+											</div>
+                      											<div class="col-6 col-12-xsmall">
+												<input type="text" name="r" id="demo-name" value="" placeholder="Enter Rainfall" />
+											</div>
+
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Send Message" class="primary" /></li>
+													<li><input type="reset" value="Reset" /></li>
+												</ul>
+												    	<h2>Crop Name: {{crop_name}} </h2>
+												    	<h3>Input details: </h3>
+												<li>N = {{n}}</li>
+												<li>P = {{p}}</li>
+												<li>K = {{k}}</li>
+										    	<li>temperature = {{t}}</li>
+												<li>humidity = {{h}}</li>
+												<li>pH = {{ph}}</li>
+                        						<li>rainfall = {{r}}</li>
+											</div>
+										</div>
+									</form>
+										<h3>Team members:</h3>
+											<ol>
+                        <li><a href="https://deepaksai.pythonanywhere.com/">Pendyala Deepak Sai - Team Lead</a></li>
+												<li>Prem sundar B</li>
+												<li>Chekuri Rohan Karthikeya</li>
+												<li>Tadikamalla Gowtham Krishna​</li>
+                        											</ol>
+                        <h3>Mentor</h3>
+                        <ol>
+                        <li><a href="https://amrita.edu/faculty/ovr-murthy/">Dr. Oruganti Venkata Ramana Murthy </a></li>
+											</ol>
+                      <li><a href="https://amrita.edu/faculty/ovr-murthy/">Source and reference from Kaggle</a></li>
 						</div>
 					</section>
 
