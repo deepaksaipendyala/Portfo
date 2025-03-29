@@ -1,5 +1,6 @@
 # @author deepak sai pendyala
 import csv
+import os
 import smtplib
 from email.message import EmailMessage
 from pathlib import Path
@@ -7,7 +8,8 @@ from string import Template
 from flask import Flask,render_template,url_for,redirect,request
 import re
 
-
+email = os.environ.get("email")
+password = os.environ.get("password")
 
 app = Flask(__name__)
 
