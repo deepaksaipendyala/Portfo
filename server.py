@@ -69,7 +69,7 @@ def check_email_body_for_spam(email_body, min_word_count=8):
 
 
 def write_to_database(data):
-    with open('./Portfo/database.txt',mode='a')as database:
+    with open('./database.txt',mode='a')as database:
         name=data["name"]
         email=data["email"]
         message=data['message']
@@ -77,7 +77,7 @@ def write_to_database(data):
         database.close()
 
 def write_to_csv(data):
-    with open('./Portfo/database.csv',mode='a',newline='')as database2:
+    with open('./database.csv',mode='a',newline='')as database2:
         name=data["name"]
         email=data["email"]
         message=data['message']
@@ -87,7 +87,7 @@ def write_to_csv(data):
 def email_sender(data):
     name = data["name"]
     emailid = data["email"]
-    html = Template(Path('./Portfo/templates/email.html').read_text())
+    html = Template(Path('./templates/email.html').read_text())
     email = EmailMessage()
     email['from'] = 'Deepak sai pendyala'
     email['to'] = emailid
