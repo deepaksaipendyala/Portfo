@@ -19,10 +19,8 @@ lxml==4.6.3
 MarkupSafe==2.0.1
 nodeenv==1.6.0
 numpy==1.21.0
-opencv-python==4.5.2.54
 packaging==20.9
 pep8==1.7.1
-Pillow==8.3.0
 pipreqs==0.4.10
 pluggy==0.13.1
 pre-commit==2.13.0
