@@ -25,8 +25,15 @@ def html_page(page_name):
         'github': 'https://github.com/deepaksaipendyala',
         'linkedin': 'https://www.linkedin.com/in/deepaksaip',
         'Linkedin': 'https://www.linkedin.com/in/deepaksaip',
-        'insta': 'https://www.instagram.com/deepak_sai.zip',
-        'learnbert': 'https://drive.google.com/file/d/1VbCCM_W8dK4UAld3ZXVIMJrRp21j3f0r/view?usp=drive_link'
+        'insta': 'https://www.instagram.com/deepaksaipendyala',
+        'instagram': 'https://www.instagram.com/deepaksaipendyala',
+        'learnbert': 'https://drive.google.com/file/d/1VbCCM_W8dK4UAld3ZXVIMJrRp21j3f0r/view?usp=drive_link',
+        'schedule': 'https://calendly.com/deepaksaipendyala/30min',
+        'meet': 'https://calendly.com/deepaksaipendyala/30min',
+        'tree': 'https://linktr.ee/deepaksai',
+        'linktree': 'https://linktr.ee/deepaksai',
+        'youtube': 'https://www.youtube.com/c/GeeksfromIndia?sub_confirmation=1',
+        'youtube': 'https://www.youtube.com/c/GeeksfromIndia?sub_confirmation=1'
     }
     if page_name in redirects:
         return redirect(redirects[page_name])
