@@ -1,390 +1,341 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Deepak Sai Pendyala — AI/ML • Research • NC State</title>
-  <meta name="description" content="Portfolio of Pendyala Deepak Sai — AI/ML engineer and Research Assistant at NC State. Work in multi‑agent systems, RAG, MLOps, and data‑driven manufacturing." />
+  <meta charset="UTF-8" />
+  <meta
+    name="description"
+    content="Deepak Sai Pendyala — MS CS @ NC State ’26. Builds explainable, production‑grade AI: multi‑agent RAG (SciAI), MLOps on AWS/GCP, and real‑time CV for additive manufacturing."
+  />
+  <meta
+    name="keywords"
+    content="Deepak, Deepaksai, Deepaksaipendyala, AI, Machine Learning, NC State, ActiveRAG, multi-agent, RAG, MLOps, Amazon, SproutsAI, Intel IoT Club, DeepLearning.AI Ambassador"
+  />
   <meta name="author" content="Pendyala Deepak Sai" />
-  <meta name="robots" content="index,follow" />
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b0f19" />
-  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0f19" />
-  <link rel="canonical" href="https://deepaksaip.me/" />
-  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Deepak Sai Pendyala — AI/ML • Research • NC State" />
-  <meta property="og:description" content="AI/ML engineer and researcher. Multi‑agent systems, RAG, MLOps, and data‑driven manufacturing." />
-  <meta property="og:url" content="https://deepaksaip.me/" />
-  <meta property="og:image" content="/static/images/og-cover.jpg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Deepak Sai Pendyala — AI/ML • Research • NC State" />
-  <meta name="twitter:description" content="AI/ML engineer and researcher. Multi‑agent systems, RAG, MLOps, and data‑driven manufacturing." />
-  <meta name="twitter:image" content="/static/images/og-cover.jpg" />
-
-  <!-- Preload key image (optional; replace with your hero image) -->
-  <link rel="preload" as="image" href="/static/images/pic03.jpg" />
-
-  <style>
-    /* --- Base reset & variables --- */
-    :root {
-      --bg: #0b0f19;
-      --elev: #12182a;
-      --panel: #0f1424;
-      --text: #e8ecf1;
-      --muted: #b4c0cf;
-      --brand: #4da3ff;
-      --brand-2: #7cf2d4;
-      --link: #89b4ff;
-      --ok: #36d399;
-      --warn: #f59e0b;
-      --err: #ef4444;
-      --radius: 16px;
-      --radius-lg: 24px;
-      --shadow: 0 8px 24px rgba(0,0,0,.25);
-      --content-max: 1120px;
-    }
-    @media (prefers-color-scheme: light) {
-      :root { --bg:#f7f8fb; --elev:#ffffff; --panel:#ffffff; --text:#0f1424; --muted:#5b6472; --link:#2457d6; }
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: var(--bg); color: var(--text);
-    }
-    a { color: var(--link); text-decoration: none; }
-    a:focus, button:focus, input:focus, textarea:focus { outline: 2px solid var(--brand); outline-offset: 2px; }
-    img { max-width: 100%; height: auto; display: block; }
-    .container { max-width: var(--content-max); margin-inline: auto; padding: 24px; }
-    .visually-hidden { position: absolute !important; clip: rect(1px,1px,1px,1px); padding: 0; border: 0; height: 1px; width: 1px; overflow: hidden; white-space: nowrap; }
-
-    /* --- Header / Nav --- */
-    header {
-      position: sticky; top: 0; z-index: 100; background: rgba(11,15,25,.7); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
-    .brand { font-weight: 700; letter-spacing:.2px; padding: 10px 0; }
-    .brand a { color: var(--text); }
-    .nav ul { list-style:none; display:flex; gap: 12px; padding:0; margin:0; }
-    .nav a.nav-link { display:inline-block; padding:10px 12px; border-radius: 10px; color: var(--text); }
-    .nav a.nav-link:hover { background: rgba(255,255,255,.06); }
-    .nav-toggle { display:none; background:transparent; border:1px solid rgba(255,255,255,.2); color:var(--text); padding:8px 12px; border-radius:10px; }
-    @media (max-width: 880px) {
-      .nav-toggle { display:block; }
-      .nav ul { position: fixed; inset: 64px 0 auto 0; background: var(--panel); padding: 16px; flex-direction: column; transform: translateY(-120%); transition: transform .25s ease; box-shadow: var(--shadow); }
-      .nav ul.open { transform: translateY(0); }
-    }
-
-    /* --- Hero --- */
-    .hero { padding: 96px 0 56px; }
-    .hero-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items:center; }
-    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height:1.15; margin: 0 0 12px; }
-    .kicker { color: var(--muted); font-weight:600; letter-spacing:.3px; text-transform: uppercase; font-size: .85rem; }
-    .lede { color: var(--muted); max-width: 70ch; }
-    .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px; }
-    .btn { appearance:none; border:1px solid rgba(255,255,255,.12); background: var(--brand); color:#081120; padding:10px 16px; border-radius:12px; font-weight:600; cursor:pointer; }
-    .btn.secondary { background: transparent; color: var(--text); }
-
-    .hero-card { border:1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); padding: 16px; border-radius: var(--radius-lg); }
-    .hero-card img { border-radius: 12px; }
-
-    @media (max-width: 980px) { .hero-grid { grid-template-columns: 1fr; } }
-
-    /* --- Sections --- */
-    section { scroll-margin-top: 80px; }
-    .section { padding: 72px 0; }
-    .section h2 { font-size: clamp(22px, 3.2vw, 32px); margin: 0 0 16px; }
-    .muted { color: var(--muted); }
-
-    /* --- Spotlight --- */
-    .spotlight { display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center; margin: 36px 0; }
-    .spotlight:nth-child(even) { grid-template-columns: .9fr 1.1fr; }
-    .spotlight article { background: var(--panel); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 20px; }
-    .spotlight .imgbox { border-radius: var(--radius); overflow:hidden; border:1px solid rgba(255,255,255,.08); }
-    @media (max-width: 980px) { .spotlight { grid-template-columns: 1fr; } }
-
-    /* --- Features grid --- */
-    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
-    .card { background: var(--panel); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 18px; }
-    .card h3 { margin-top: 0; }
-    @media (max-width: 1020px) { .grid { grid-template-columns: repeat(2,1fr);} }
-    @media (max-width: 680px) { .grid { grid-template-columns: 1fr;} }
-
-    /* --- Contact --- */
-    .contact-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    form .row { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
-    form label { display:block; font-weight:600; margin-bottom: 6px; }
-    form input, form textarea { width:100%; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,.16); background: #0d1324; color: var(--text); }
-    form input::placeholder, form textarea::placeholder { color: #7f8aa3; }
-    form .actions { display:flex; gap:12px; align-items:center; margin-top: 10px; }
-    .help { font-size: .9rem; color: var(--muted); }
-    .message { margin-top:8px; font-size:.95rem; }
-    .message.ok { color: var(--ok); }
-    .message.err { color: var(--err); }
-    .hp { display:none; }
-    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } form .row { grid-template-columns: 1fr; } }
-
-    /* --- Footer --- */
-    footer { border-top: 1px solid rgba(255,255,255,.08); background: #0a0f1d; }
-    footer .footer-wrap { display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
-    footer ul { list-style:none; display:flex; gap:14px; padding:0; margin:0; }
-    .small { color: var(--muted); font-size:.92rem; }
-  </style>
-
-  <!-- Structured Data: Person + Website -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Pendyala Deepak Sai",
-    "alternateName": "Deepak Sai Pendyala",
-    "url": "https://deepaksaip.me/",
-    "jobTitle": "AI/ML Engineer & Research Assistant",
-    "affiliation": {"@type":"CollegeOrUniversity","name":"North Carolina State University"},
-    "alumniOf": {"@type":"CollegeOrUniversity","name":"Amrita Vishwa Vidyapeetham"},
-    "sameAs": [
-      "https://github.com/deepaksaipendyala",
-      "https://www.linkedin.com/in/deepaksaip",
-      "https://twitter.com/deepak_sai_",
-      "https://www.instagram.com/deepak_sai.zip"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://deepaksaip.me/",
-    "name": "Deepak Sai Pendyala — Portfolio",
-    "potentialAction": {"@type": "SearchAction","target":"https://deepaksaip.me/?q={search_term_string}","query-input":"required name=search_term_string"}
-  }
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>Deepak Sai Pendyala</title>
+  <link rel="stylesheet" href="/static/assets/css/main.css" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
+  <noscript>
+    <link rel="stylesheet" href="/static/assets/css/noscript.css" />
+  </noscript>
 </head>
-<body>
-  <a class="visually-hidden" href="#main">Skip to content</a>
-
-  <header role="banner">
-    <div class="container nav">
-      <strong class="brand"><a href="#intro" aria-label="Home">Deepak Sai Pendyala</a></strong>
-      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-      <ul id="primary-nav" class="nav-list" role="navigation" aria-label="Primary">
-        <li><a class="nav-link" href="#intro">Intro</a></li>
-        <li><a class="nav-link" href="#about">About</a></li>
-        <li><a class="nav-link" href="#work">Work</a></li>
-        <li><a class="nav-link" href="#skills">Stack</a></li>
-        <li><a class="nav-link" href="#contact">Contact</a></li>
-        <li><a class="nav-link" href="https://deepaksaip.me/resume" rel="noopener noreferrer">Resume</a></li>
-      </ul>
+<body class="is-preload">
+  <!-- Sidebar -->
+  <section id="sidebar" aria-label="Site navigation">
+    <div class="inner">
+      <nav>
+        <ul>
+          <li><a href="#intro">Welcome</a></li>
+          <li><a href="#one">About</a></li>
+          <li><a href="#two">Work</a></li>
+          <li><a href="https://deepaksaip.me/resume" target="_blank" rel="noopener noreferrer">Resume</a></li>
+          <li><a href="#three">Contact</a></li>
+        </ul>
+      </nav>
     </div>
-  </header>
+  </section>
 
-  <main id="main">
-    <!-- Hero / Intro -->
-    <section id="intro" class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="kicker">AI/ML • Multi‑Agent Systems • RAG • MLOps</p>
-          <h1>Building explainable, production‑grade AI systems.</h1>
-          <p class="lede">I’m Deepak — a CS grad student at NC State and Research Assistant working on data‑driven manufacturing and trustworthy AI. Previously Applied Scientist Intern at Amazon. I ship real systems, not demos.</p>
-          <div class="cta">
-            <a class="btn" href="#work">See projects</a>
-            <a class="btn secondary" href="https://github.com/deepaksaipendyala" rel="noopener noreferrer">GitHub</a>
-          </div>
-        </div>
-        <aside class="hero-card" aria-label="Featured photo">
-          <img src="/static/images/pic03.jpg" alt="Deepak at NC State lab" width="1200" height="800" loading="eager" decoding="async" />
-        </aside>
+  <!-- Wrapper -->
+  <div id="wrapper">
+    <!-- Intro -->
+    <section id="intro" class="wrapper style1 fullscreen fade-up">
+      <div class="inner">
+        <h1>Deepak Sai Pendyala</h1>
+        <p>
+          I build reliable, explainable AI. I’m a CS master’s student at North Carolina State University (’26) working on multi‑agent RAG, evaluation, and human‑readable outputs. Previously: Applied Scientist Intern at Amazon; AI Engineer at SproutsAI; research on real‑time CV for additive manufacturing.
+        </p>
+        <ul class="actions">
+          <li><a href="#one" class="button scrolly">See more</a></li>
+        </ul>
       </div>
     </section>
 
-    <!-- About / Research highlights -->
-    <section id="about" class="section">
-      <div class="container">
-        <h2>Research at NC State</h2>
-        <div class="spotlight">
-          <div class="imgbox">
-            <img src="/static/images/pic03.jpg" alt="Research at NC State" width="1280" height="850" loading="lazy" decoding="async" />
-          </div>
-          <article>
-            <p>I work on ML for additive manufacturing in a DARPA‑funded effort — computer vision, real‑time data pipelines, and feedback‑aware AI for first‑time‑right parts. My focus: reliability, explainability, and measurable impact.</p>
-            <p><a class="btn secondary" href="https://www.linkedin.com/in/deepaksaip" rel="noopener noreferrer">Learn more</a></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work / Experience spotlights -->
-    <section id="work" class="section" aria-labelledby="work-title">
-      <div class="container">
-        <h2 id="work-title">Experience highlights</h2>
-
-        <div class="spotlight">
-          <article>
-            <h3>Applied Scientist Intern — Amazon</h3>
-            <p>Built text classification systems with AWS SageMaker and a feedback‑driven retraining loop. Led MLOps automation to shrink manual review and boost reliability across iterations.</p>
-            <p><a class="btn secondary" href="https://www.deeplearning.ai/blog/2022-pie-ai-ambassador-spotlight-deepak" rel="noopener noreferrer">Learn more</a></p>
-          </article>
-          <div class="imgbox">
-            <img src="/static/images/pic01.jpg" alt="Amazon internship" width="1280" height="850" loading="lazy" decoding="async" />
-          </div>
-        </div>
-
-        <div class="spotlight">
-          <div class="imgbox">
-            <img src="/static/images/pic02.jpg" alt="Tech communities ambassador" width="1280" height="850" loading="lazy" decoding="async" />
-          </div>
-          <article>
-            <h3>Community — AI & IoT Ambassador</h3>
-            <p>Led workshops bridging AI and IoT as a DeepLearning.AI Event Ambassador and Intel IoT Student Ambassador. Selected among global standouts for hands‑on, practical education.</p>
-            <p><a class="btn secondary" href="https://inteliotclub.vercel.app" rel="noopener noreferrer">Club site</a></p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills / What I do -->
-    <section id="skills" class="section" aria-labelledby="skills-title">
-      <div class="container">
-        <h2 id="skills-title">What I do</h2>
-        <p class="muted">I apply ML rigor to real products — from multi‑agent RAG to cloud‑scale MLOps — with a bias toward clarity, safety, and shipping.</p>
-        <div class="grid" role="list">
-          <article class="card" role="listitem">
-            <h3>Research & Development</h3>
-            <p>Computer vision for additive manufacturing, real‑time data processing, and human‑centered AI. Clear metrics, transparent decisions, and reliability as a feature.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3>AI & ML Engineering</h3>
-            <p>Feedback‑aware training, evaluation pipelines, bias analysis, and explainability. Comfortable moving from prototype to production with guardrails.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3>Projects & Writing</h3>
-            <p>Electricity market modeling, airline review NLP, and a chapter on generative transformers. Focused on reproducibility and real adoption.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3>Stack</h3>
-            <p>Python, SQL, C/C++, MATLAB, Embedded C. PyTorch & TensorFlow. AWS. Data viz & pipelines. End‑to‑end delivery on cloud or on‑prem.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3>Recognitions</h3>
-            <p>Top 10 Pie & AI Ambassador (2022). Built & led campus communities of 1k+ members to grow applied AI literacy.</p>
-          </article>
-          <article class="card" role="listitem">
-            <h3>Open to Opportunities</h3>
-            <p>Collaborations in AI, Data, IoT, and software. If your team ships responsibly and cares about explainability, let’s talk.</p>
-          </article>
-        </div>
-        <p style="margin-top:14px"><a class="btn" href="https://github.com/deepaksaipendyala?tab=repositories" rel="noopener noreferrer">Explore repositories</a></p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section" aria-labelledby="contact-title">
-      <div class="container contact-grid">
-        <div>
-          <h2 id="contact-title">Get in touch</h2>
-          <p class="muted">Short and clear works best. You’ll get an automated confirmation and a reply if it’s a fit.</p>
-          <form id="contact-form" method="post" action="/submit_form" novalidate>
-            <div class="row">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="name" type="text" autocomplete="name" required />
-              </div>
-              <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
-              </div>
-            </div>
-            <div style="margin-top:12px">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" placeholder="What would you like to build?" required></textarea>
-            </div>
-            <!-- Honeypot -->
-            <div class="hp" aria-hidden="true">
-              <label for="company">Company</label>
-              <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
-            </div>
-            <div class="actions">
-              <button class="btn" type="submit">Send</button>
-              <button class="btn secondary" type="reset">Reset</button>
-            </div>
-            <p id="form-msg" class="message" role="status" aria-live="polite"></p>
-          </form>
-          <p class="help">If SMTP has issues, email: <a href="mailto:caterer.05beeches@icloud.com?subject=Portfolio%20Contact">caterer.05beeches@icloud.com</a></p>
-        </div>
-        <aside aria-label="Contact details">
-          <div class="card">
-            <h3>Location</h3>
-            <p>Raleigh, North Carolina, USA</p>
-            <h3>Email</h3>
-            <p><a href="mailto:caterer.05beeches@icloud.com?subject=Feedback">Send an email</a></p>
-            <h3>Phone</h3>
-            <p>1CC38ED35746 (encrypted)</p>
-            <h3>Social</h3>
-            <ul>
-              <li><a href="https://twitter.com/deepak_sai_" rel="noopener noreferrer">Twitter</a></li>
-              <li><a href="https://www.facebook.com/deepak.pendyala.9" rel="noopener noreferrer">Facebook</a></li>
-              <li><a href="https://github.com/deepaksaipendyala" rel="noopener noreferrer">GitHub</a></li>
-              <li><a href="https://www.instagram.com/deepak_sai.zip" rel="noopener noreferrer">Instagram</a></li>
-              <li><a href="https://www.linkedin.com/in/deepaksaip" rel="noopener noreferrer">LinkedIn</a></li>
+    <!-- Spotlight Sections -->
+    <section id="one" class="wrapper style2 spotlights">
+      <!-- STEPS / SciAI -->
+      <section>
+        <a href="https://steps-center.org" class="image" target="_blank" rel="noopener noreferrer">
+          <img
+            src="./static/images/pic03.jpg"
+            alt="NC State research — SciAI multi‑agent RAG for scientific QA"
+            data-position="center center"
+            loading="lazy"
+          />
+        </a>
+        <div class="content">
+          <div class="inner">
+            <h2>STEPS Center — SciAI (2025–)</h2>
+            <p>
+              Graduate Research Assistant building <strong>SciAI</strong>: a trustworthy multi‑agent system for scientific Q&A. It integrates ActiveRAG retrieval, validation agents, and citation‑grounded reasoning to reduce hallucinations. I’m also designing a three‑phase evaluation framework (retrieval → reasoning → generation) with a curated textbook/lecture benchmark.
+            </p>
+            <ul class="actions">
+              <li><a href="https://deepaksaip.me" class="button" target="_blank" rel="noopener noreferrer">Overview</a></li>
             </ul>
           </div>
-        </aside>
+        </div>
+      </section>
+
+      <!-- SproutsAI -->
+      <section>
+        <div class="content">
+          <div class="inner">
+            <h2>AI Engineer — SproutsAI (Summer ’25)</h2>
+            <p>
+              Shipped an agentic analytics system that answered <strong>150+ natural‑language questions</strong> by compiling MongoDB aggregations across <strong>15+ databases</strong>. Hybrid retrieval with Qdrant + Neo4j enabled schema‑aware joins and explainable, chart‑ready outputs. I owned design RFCs, eval/monitoring, and stakeholder demos.
+            </p>
+            <ul class="actions">
+              <li><a href="https://www.sproutsai.com" class="button" target="_blank" rel="noopener noreferrer">Company</a></li>
+            </ul>
+          </div>
+        </div>
+        <a href="https://www.deeplearning.ai/blog/pie-ai-ambassadors-2022" class="image" target="_blank" rel="noopener noreferrer">
+          <img
+            src="./static/images/pic01.jpg"
+            alt="Agentic AI and RAG systems in production"
+            data-position="center center"
+            loading="lazy"
+          />
+        </a>
+      </section>
+
+      <!-- Amazon -->
+      <section>
+        <a href="https://www.amazon.science" class="image" target="_blank" rel="noopener noreferrer">
+          <img
+            src="./static/images/pic02.jpg"
+            alt="Applied Scientist Intern — Amazon"
+            data-position="center center"
+            loading="lazy"
+          />
+        </a>
+        <div class="content">
+          <div class="inner">
+            <h2>Applied Scientist Intern — Amazon (’23)</h2>
+            <p>
+              Built ML/GenAI automation for Finance/Tax workflows on AWS SageMaker with event‑driven MLOps (Lambda, Step Functions, S3). Impact: <strong>60% cut</strong> in manual review time; <strong>90%</strong> drop in human effort via feedback‑based retraining; <strong>80%</strong> scalability boost.
+            </p>
+            <ul class="actions">
+              <li><a href="https://deepaksaip.me/resume" class="button" target="_blank" rel="noopener noreferrer">Project details</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CAMAL / DARPA -->
+      <section>
+        <div class="content">
+          <div class="inner">
+            <h2>Research — CAMAL (’24–’25)</h2>
+            <p>
+              On a DARPA‑funded effort at NC State’s CAMAL Lab, I integrated ML into 3D‑printing pipelines for defense‑grade parts, achieving a <strong>4.3×</strong> inference speedup and ~<strong>70%</strong> gains in accuracy/efficiency on internal benchmarks.
+            </p>
+            <ul class="actions">
+              <li><a href="https://camal.ncsu.edu" class="button" target="_blank" rel="noopener noreferrer">Lab</a></li>
+            </ul>
+          </div>
+        </div>
+        <a href="https://camal.ncsu.edu" class="image" target="_blank" rel="noopener noreferrer">
+          <img
+            src="./static/images/pic03.jpg"
+            alt="Additive manufacturing — real‑time CV & analytics"
+            data-position="center center"
+            loading="lazy"
+          />
+        </a>
+      </section>
+    </section>
+
+    <!-- What I Do / Work -->
+    <section id="two" class="wrapper style3 fade-up">
+      <div class="inner">
+        <h2>Work</h2>
+        <p>
+          I ship systems that are explainable, measurable, and maintainable.
+        </p>
+        <div class="features">
+          <section>
+            <span class="icon solid major fa-code" aria-hidden="true"></span>
+            <h3>Research &amp; Development</h3>
+            <p>
+              Multi‑agent reasoning for scientific QA; real‑time CV for additive manufacturing; evaluation frameworks that keep models accountable.
+            </p>
+          </section>
+          <section>
+            <span class="icon solid major fa-lock" aria-hidden="true"></span>
+            <h3>AI/ML</h3>
+            <p>
+              LLMs, RAG, LangGraph, LangChain, fine‑tuning. Feedback loops, multi‑tier evaluation, and on‑call MLOps on AWS/GCP.
+            </p>
+          </section>
+          <section>
+            <span class="icon solid major fa-cog" aria-hidden="true"></span>
+            <h3>Data &amp; MLOps</h3>
+            <p>
+              Python; PyTorch/TensorFlow; Docker/Kubernetes; AWS SageMaker, Step Functions, EventBridge; Kafka, PySpark; MongoDB, MySQL, Neo4j, Qdrant.
+            </p>
+          </section>
+          <section>
+            <span class="icon solid major fa-link" aria-hidden="true"></span>
+            <h3>Recognition</h3>
+            <p>
+              DeepLearning.AI <strong>Top 10 Ambassador (2022)</strong>. Founded Intel IoT Club; grew it to <strong>2000+ members</strong> with 35+ core team.
+            </p>
+          </section>
+          <section>
+            <span class="icon solid major fa-book" aria-hidden="true"></span>
+            <h3>Publication</h3>
+            <p>
+              Co‑author, <em>Generative Transformers and Text Generation Models</em>, in IET <em>Generative AI Unleashed</em> (2025).
+            </p>
+          </section>
+          <section>
+            <span class="icon major fa-gem" aria-hidden="true"></span>
+            <h3>Open to Opportunities</h3>
+            <p>
+              Graduating May 2026. Roles in AI/ML, Applied Science, or Software Engineering where reliability, explainability, and shipping matter.
+            </p>
+          </section>
+        </div>
+
+        <!-- Selected Projects -->
+        <h3 style="margin-top:2rem;">Selected Projects</h3>
+        <div class="features">
+          <section>
+            <span class="icon solid fa-project-diagram" aria-hidden="true"></span>
+            <h4>ActiveRAG Next</h4>
+            <p>
+              Multi‑agent RAG with coordinator/analyst/reasoner/validator, RAG‑Fusion retrieval, knowledge‑graph extraction, and Streamlit UI with live traces.
+            </p>
+            <ul class="actions">
+              <li><a class="button" href="https://github.com/deepaksaipendyala/ActiveRAG-Next" target="_blank" rel="noopener">GitHub</a></li>
+            </ul>
+          </section>
+          <section>
+            <span class="icon solid fa-bolt" aria-hidden="true"></span>
+            <h4>Power Price Tagging</h4>
+            <p>
+              Genetic‑algorithm auction + deep learning for market price tagging and ELD optimization on IEX data; LSTM baselines with actionable insights.
+            </p>
+            <ul class="actions">
+              <li><a class="button" href="https://www.kaggle.com/code/deepaksaipendyala/predictive-model-based-power-price-tagging" target="_blank" rel="noopener">Kaggle</a></li>
+            </ul>
+          </section>
+        </div>
+
+        <ul class="actions">
+          <li>
+            <a href="https://github.com/deepaksaipendyala?tab=repositories" class="button" target="_blank" rel="noopener noreferrer">View GitHub</a>
+          </li>
+        </ul>
       </div>
     </section>
-  </main>
 
-  <footer role="contentinfo">
-    <div class="container footer-wrap">
-      <p class="small">© 2021–2025 Deepak Sai Pendyala. All rights reserved. Built with semantic HTML, accessible styles, and zero jQuery.</p>
-      <ul>
-        <li><a href="https://github.com/deepaksaipendyala/Portfo" rel="noopener noreferrer">GitHub Repo</a></li>
-        <li><a href="#intro">Back to top</a></li>
+    <!-- Feedback -->
+    <section id="three" class="wrapper style1 fade-up">
+      <div class="inner">
+        <h2>Feedback</h2>
+        <p>
+          I read everything. If SMTP flakes out, reach me on LinkedIn.
+        </p>
+        <div class="split style1">
+          <section>
+            <form method="post" action="/submit_form" novalidate>
+              <div class="fields">
+                <div class="field half">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" id="name" required aria-required="true" />
+                </div>
+                <div class="field half">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email" required aria-required="true" />
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea name="message" id="message" rows="5" placeholder="What should I build next?"></textarea>
+                </div>
+              </div>
+              <ul class="actions">
+                <li><input type="submit" value="Send" class="button submit" /></li>
+                <li><input type="reset" value="Reset" /></li>
+              </ul>
+            </form>
+          </section>
+          <section>
+            <ul class="contact">
+              <li>
+                <h3>Location</h3>
+                <span>
+                  Raleigh,<br />
+                  North Carolina,<br />
+                  USA
+                </span>
+              </li>
+              <li>
+                <h3>Email</h3>
+                <a href="mailto:caterer.05beeches@icloud.com?subject=Feedback&amp;body=Message" rel="noopener">Send an email</a>
+              </li>
+              <li>
+                <h3>Phone</h3>
+                <span>1CC38ED35746 (encrypted)</span>
+              </li>
+              <li>
+                <h3>Social</h3>
+                <ul class="icons">
+                  <li>
+                    <a href="https://twitter.com/deepak_sai_" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer">
+                      <span class="label">Twitter</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/deepak.pendyala.9" class="icon brands fa-facebook-f" target="_blank" rel="noopener noreferrer">
+                      <span class="label">Facebook</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/deepaksaipendyala" class="icon brands fa-github" target="_blank" rel="noopener noreferrer">
+                      <span class="label">GitHub</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/deepak_sai.zip" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer">
+                      <span class="label">Instagram</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/deepaksaip" class="icon brands fa-linkedin-in" target="_blank" rel="noopener noreferrer">
+                      <span class="label">LinkedIn</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer" class="wrapper style1-alt">
+    <div class="inner">
+      <ul class="menu">
+        <li>Designed 2021–2025 &copy; Deepak Sai Pendyala. All rights reserved.</li>
+        <li>Designed with HTML5 UP</li>
+        <li>
+          <a href="https://github.com/deepaksaipendyala/Portfo" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        </li>
       </ul>
     </div>
   </footer>
 
-  <script>
-    // Mobile nav toggle
-    const toggle = document.getElementById('nav-toggle');
-    const nav = document.getElementById('primary-nav');
-    toggle?.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
-
-    // Basic client-side validation + honeypot
-    const form = document.getElementById('contact-form');
-    const msg = document.getElementById('form-msg');
-    form?.addEventListener('submit', (e) => {
-      const hp = document.getElementById('company');
-      const email = document.getElementById('email');
-      if (hp && hp.value) {
-        e.preventDefault();
-        msg.textContent = 'Submission blocked.';
-        msg.className = 'message err';
-        return;
-      }
-      if (email && !email.value.includes('@')) {
-        e.preventDefault();
-        msg.textContent = 'Enter a valid email.';
-        msg.className = 'message err';
-        return;
-      }
-      msg.textContent = 'Sending…';
-      msg.className = 'message';
-    });
-
-    // Reduce motion preference
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.style.scrollBehavior = 'auto';
-    }
-  </script>
+  <!-- Scripts (same imports) -->
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  <script src="./static/assets/js/jquery.min.js"></script>
+  <script src="./static/assets/js/jquery.scrollex.min.js"></script>
+  <script src="./static/assets/js/jquery.scrolly.min.js"></script>
+  <script src="./static/assets/js/browser.min.js"></script>
+  <script src="./static/assets/js/breakpoints.min.js"></script>
+  <script src="./static/assets/js/util.js"></script>
+  <script src="./static/assets/js/main.js"></script>
 </body>
 </html>
