@@ -1,294 +1,390 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="description"
-    content="Pendyala Deepak Sai's Portfolio Website, origin at http://deepaksai.pythonanywhere.com/ which runs on Python Flask"
-  />
-  <meta
-    name="keywords"
-    content="Deepak, Deepaksai, Deepaksaipendyala, deepak amrita, deepak iot club, deepak intel iot club, deepak intel student ambassador, intel iot club"
-  />
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Deepak Sai Pendyala — AI/ML • Research • NC State</title>
+  <meta name="description" content="Portfolio of Pendyala Deepak Sai — AI/ML engineer and Research Assistant at NC State. Work in multi‑agent systems, RAG, MLOps, and data‑driven manufacturing." />
   <meta name="author" content="Pendyala Deepak Sai" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <title>Deepak Sai Pendyala</title>
-  <link rel="stylesheet" href="/static/assets/css/main.css" />
-  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-  <noscript>
-    <link rel="stylesheet" href="/static/assets/css/noscript.css" />
-  </noscript>
+  <meta name="robots" content="index,follow" />
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#0b0f19" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0f19" />
+  <link rel="canonical" href="https://deepaksaip.me/" />
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" />
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Deepak Sai Pendyala — AI/ML • Research • NC State" />
+  <meta property="og:description" content="AI/ML engineer and researcher. Multi‑agent systems, RAG, MLOps, and data‑driven manufacturing." />
+  <meta property="og:url" content="https://deepaksaip.me/" />
+  <meta property="og:image" content="/static/images/og-cover.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Deepak Sai Pendyala — AI/ML • Research • NC State" />
+  <meta name="twitter:description" content="AI/ML engineer and researcher. Multi‑agent systems, RAG, MLOps, and data‑driven manufacturing." />
+  <meta name="twitter:image" content="/static/images/og-cover.jpg" />
+
+  <!-- Preload key image (optional; replace with your hero image) -->
+  <link rel="preload" as="image" href="/static/images/pic03.jpg" />
+
+  <style>
+    /* --- Base reset & variables --- */
+    :root {
+      --bg: #0b0f19;
+      --elev: #12182a;
+      --panel: #0f1424;
+      --text: #e8ecf1;
+      --muted: #b4c0cf;
+      --brand: #4da3ff;
+      --brand-2: #7cf2d4;
+      --link: #89b4ff;
+      --ok: #36d399;
+      --warn: #f59e0b;
+      --err: #ef4444;
+      --radius: 16px;
+      --radius-lg: 24px;
+      --shadow: 0 8px 24px rgba(0,0,0,.25);
+      --content-max: 1120px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg:#f7f8fb; --elev:#ffffff; --panel:#ffffff; --text:#0f1424; --muted:#5b6472; --link:#2457d6; }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg); color: var(--text);
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:focus, button:focus, input:focus, textarea:focus { outline: 2px solid var(--brand); outline-offset: 2px; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { max-width: var(--content-max); margin-inline: auto; padding: 24px; }
+    .visually-hidden { position: absolute !important; clip: rect(1px,1px,1px,1px); padding: 0; border: 0; height: 1px; width: 1px; overflow: hidden; white-space: nowrap; }
+
+    /* --- Header / Nav --- */
+    header {
+      position: sticky; top: 0; z-index: 100; background: rgba(11,15,25,.7); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand { font-weight: 700; letter-spacing:.2px; padding: 10px 0; }
+    .brand a { color: var(--text); }
+    .nav ul { list-style:none; display:flex; gap: 12px; padding:0; margin:0; }
+    .nav a.nav-link { display:inline-block; padding:10px 12px; border-radius: 10px; color: var(--text); }
+    .nav a.nav-link:hover { background: rgba(255,255,255,.06); }
+    .nav-toggle { display:none; background:transparent; border:1px solid rgba(255,255,255,.2); color:var(--text); padding:8px 12px; border-radius:10px; }
+    @media (max-width: 880px) {
+      .nav-toggle { display:block; }
+      .nav ul { position: fixed; inset: 64px 0 auto 0; background: var(--panel); padding: 16px; flex-direction: column; transform: translateY(-120%); transition: transform .25s ease; box-shadow: var(--shadow); }
+      .nav ul.open { transform: translateY(0); }
+    }
+
+    /* --- Hero --- */
+    .hero { padding: 96px 0 56px; }
+    .hero-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items:center; }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height:1.15; margin: 0 0 12px; }
+    .kicker { color: var(--muted); font-weight:600; letter-spacing:.3px; text-transform: uppercase; font-size: .85rem; }
+    .lede { color: var(--muted); max-width: 70ch; }
+    .cta { display:flex; gap:12px; flex-wrap:wrap; margin-top: 16px; }
+    .btn { appearance:none; border:1px solid rgba(255,255,255,.12); background: var(--brand); color:#081120; padding:10px 16px; border-radius:12px; font-weight:600; cursor:pointer; }
+    .btn.secondary { background: transparent; color: var(--text); }
+
+    .hero-card { border:1px solid rgba(255,255,255,.08); background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01)); padding: 16px; border-radius: var(--radius-lg); }
+    .hero-card img { border-radius: 12px; }
+
+    @media (max-width: 980px) { .hero-grid { grid-template-columns: 1fr; } }
+
+    /* --- Sections --- */
+    section { scroll-margin-top: 80px; }
+    .section { padding: 72px 0; }
+    .section h2 { font-size: clamp(22px, 3.2vw, 32px); margin: 0 0 16px; }
+    .muted { color: var(--muted); }
+
+    /* --- Spotlight --- */
+    .spotlight { display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:center; margin: 36px 0; }
+    .spotlight:nth-child(even) { grid-template-columns: .9fr 1.1fr; }
+    .spotlight article { background: var(--panel); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 20px; }
+    .spotlight .imgbox { border-radius: var(--radius); overflow:hidden; border:1px solid rgba(255,255,255,.08); }
+    @media (max-width: 980px) { .spotlight { grid-template-columns: 1fr; } }
+
+    /* --- Features grid --- */
+    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
+    .card { background: var(--panel); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 18px; }
+    .card h3 { margin-top: 0; }
+    @media (max-width: 1020px) { .grid { grid-template-columns: repeat(2,1fr);} }
+    @media (max-width: 680px) { .grid { grid-template-columns: 1fr;} }
+
+    /* --- Contact --- */
+    .contact-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    form .row { display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
+    form label { display:block; font-weight:600; margin-bottom: 6px; }
+    form input, form textarea { width:100%; padding:12px; border-radius:10px; border:1px solid rgba(255,255,255,.16); background: #0d1324; color: var(--text); }
+    form input::placeholder, form textarea::placeholder { color: #7f8aa3; }
+    form .actions { display:flex; gap:12px; align-items:center; margin-top: 10px; }
+    .help { font-size: .9rem; color: var(--muted); }
+    .message { margin-top:8px; font-size:.95rem; }
+    .message.ok { color: var(--ok); }
+    .message.err { color: var(--err); }
+    .hp { display:none; }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } form .row { grid-template-columns: 1fr; } }
+
+    /* --- Footer --- */
+    footer { border-top: 1px solid rgba(255,255,255,.08); background: #0a0f1d; }
+    footer .footer-wrap { display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    footer ul { list-style:none; display:flex; gap:14px; padding:0; margin:0; }
+    .small { color: var(--muted); font-size:.92rem; }
+  </style>
+
+  <!-- Structured Data: Person + Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pendyala Deepak Sai",
+    "alternateName": "Deepak Sai Pendyala",
+    "url": "https://deepaksaip.me/",
+    "jobTitle": "AI/ML Engineer & Research Assistant",
+    "affiliation": {"@type":"CollegeOrUniversity","name":"North Carolina State University"},
+    "alumniOf": {"@type":"CollegeOrUniversity","name":"Amrita Vishwa Vidyapeetham"},
+    "sameAs": [
+      "https://github.com/deepaksaipendyala",
+      "https://www.linkedin.com/in/deepaksaip",
+      "https://twitter.com/deepak_sai_",
+      "https://www.instagram.com/deepak_sai.zip"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://deepaksaip.me/",
+    "name": "Deepak Sai Pendyala — Portfolio",
+    "potentialAction": {"@type": "SearchAction","target":"https://deepaksaip.me/?q={search_term_string}","query-input":"required name=search_term_string"}
+  }
+  </script>
 </head>
-<body class="is-preload">
-  <!-- Sidebar -->
-  <section id="sidebar">
-    <div class="inner">
-      <nav>
-        <ul>
-          <li><a href="#intro">Welcome Buddy!</a></li>
-          <li><a href="#one">Who am I?</a></li>
-          <li><a href="#two">What I do</a></li>
-          <li><a href="https://deepaksai.pythonanywhere.com/resume">Resume</a></li>
-          <li><a href="#three">Get in touch</a></li>
-        </ul>
-      </nav>
+<body>
+  <a class="visually-hidden" href="#main">Skip to content</a>
+
+  <header role="banner">
+    <div class="container nav">
+      <strong class="brand"><a href="#intro" aria-label="Home">Deepak Sai Pendyala</a></strong>
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <ul id="primary-nav" class="nav-list" role="navigation" aria-label="Primary">
+        <li><a class="nav-link" href="#intro">Intro</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#work">Work</a></li>
+        <li><a class="nav-link" href="#skills">Stack</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+        <li><a class="nav-link" href="https://deepaksai.pythonanywhere.com/resume" rel="noopener noreferrer">Resume</a></li>
+      </ul>
     </div>
-  </section>
+  </header>
 
-  <!-- Wrapper -->
-  <div id="wrapper">
-    <!-- Intro -->
-    <section id="intro" class="wrapper style1 fullscreen fade-up">
-      <div class="inner">
-        <h1>Deepak Sai Pendyala</h1>
-        <p>
-          Hey there! I’m Deepak—a curious soul chasing AI breakthroughs and big data dreams at NC State. I'm currently pursuing a Master's in Computer Science at North Carolina State University, focusing on Data Science. Previously, I worked as an Applied Scientist Intern at Amazon—where I led projects involving AI and machine learning. When I am not coding or tinkering with devices, I enjoy cooking, photography, blogging, and music. You can find some of my work on my GitHub profile. Dive in to discover more about my journey!
-        </p>
-        <ul class="actions">
-          <li><a href="#one" class="button scrolly">Take me down</a></li>
-        </ul>
+  <main id="main">
+    <!-- Hero / Intro -->
+    <section id="intro" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="kicker">AI/ML • Multi‑Agent Systems • RAG • MLOps</p>
+          <h1>Building explainable, production‑grade AI systems.</h1>
+          <p class="lede">I’m Deepak — a CS grad student at NC State and Research Assistant working on data‑driven manufacturing and trustworthy AI. Previously Applied Scientist Intern at Amazon. I ship real systems, not demos.</p>
+          <div class="cta">
+            <a class="btn" href="#work">See projects</a>
+            <a class="btn secondary" href="https://github.com/deepaksaipendyala" rel="noopener noreferrer">GitHub</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Featured photo">
+          <img src="/static/images/pic03.jpg" alt="Deepak at NC State lab" width="1200" height="800" loading="eager" decoding="async" />
+        </aside>
       </div>
     </section>
 
-    <!-- Spotlight Sections -->
-    <section id="one" class="wrapper style2 spotlights">
-      <!-- 1st spotlight: Image on the LEFT -->
-      <section>
-        <a href="https://www.linkedin.com/in/deepaksaip" class="image">
-          <img
-            src="./static/images/pic03.jpg"
-            alt="Research at NC State"
-            data-position="center center"
-          />
-        </a>
-        <div class="content">
-          <div class="inner">
-            <h2>Research at NC State</h2>
-            <p>
-              I’m a Research Assistant at North Carolina State University developing machine learning solutions for 3D printing in a DARPA-funded project. My journey has sharpened my focus on AI, Data Science, and responsible AI.
-            </p>
-            <ul class="actions">
-              <li><a href="https://www.linkedin.com/in/deepaksaip" class="button">Learn more</a></li>
-            </ul>
+    <!-- About / Research highlights -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>Research at NC State</h2>
+        <div class="spotlight">
+          <div class="imgbox">
+            <img src="/static/images/pic03.jpg" alt="Research at NC State" width="1280" height="850" loading="lazy" decoding="async" />
           </div>
+          <article>
+            <p>I work on ML for additive manufacturing in a DARPA‑funded effort — computer vision, real‑time data pipelines, and feedback‑aware AI for first‑time‑right parts. My focus: reliability, explainability, and measurable impact.</p>
+            <p><a class="btn secondary" href="https://www.linkedin.com/in/deepaksaip" rel="noopener noreferrer">Learn more</a></p>
+          </article>
         </div>
-      </section>
-
-      <!-- 2nd spotlight: Image on the RIGHT (reordered content first, image second) -->
-      <section>
-        <div class="content">
-          <div class="inner">
-            <h2>Applied Scientist Intern at Amazon</h2>
-            <p>
-              I developed comprehensive solutions for text-based product categorization at Taskless (a FinTech sector within Amazon) by leveraging AWS SageMaker and an efficient MLOps workflow with a feedback-driven retraining mechanism.
-            </p>
-            <ul class="actions">
-              <li>
-                <a href="https://www.deeplearning.ai/blog/2022-pie-ai-ambassador-spotlight-deepak" class="button">Learn more</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <a href="https://www.deeplearning.ai/blog/pie-ai-ambassadors-2022" class="image">
-          <img
-            src="./static/images/pic01.jpg"
-            alt="Amazon Internship"
-            data-position="center center"
-          />
-        </a>
-      </section>
-
-      <!-- 3rd spotlight: Image on the LEFT again -->
-      <section>
-        <a href="https://www.credly.com/badges/e0e22679-bfb9-472d-be1c-6411b78d5e6d" class="image">
-          <img
-            src="./static/images/pic02.jpg"
-            alt="Tech Communities Ambassador"
-            data-position="center center"
-          />
-        </a>
-        <div class="content">
-          <div class="inner">
-            <h2>Empowering Tech Communities: AI and IoT Ambassador</h2>
-            <p>
-              As a DeepLearning.AI Event Ambassador and Intel IoT Student Ambassador, I led initiatives at the intersection of AI and IoT, organizing community events and hands-on workshops. Selected as a <a href="https://www.deeplearning.ai/blog/pie-ai-ambassadors-2022">Top 10 Deeplearning.AI Ambassador (2022)</a> globally, featured in official blogs and social media for driving AI education and bridging industry expertise with academia.
-            </p>
-            <ul class="actions">
-              <li><a href="https://inteliotclub.vercel.app" class="button">Learn more</a></li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      </div>
     </section>
 
-    <!-- What I Do -->
-    <section id="two" class="wrapper style3 fade-up">
-      <div class="inner">
-        <h2>What I do</h2>
-        <p>
-          With a deep passion for Machine Learning, Data Science, and emerging tech, I've built a versatile skill set and am constantly pushing the envelope of innovation.
-        </p>
-        <div class="features">
-          <section>
-            <span class="icon solid major fa-code"></span>
-            <h3>Research &amp; Development</h3>
-            <p>
-            Alongside my role as a Research Assistant at North Carolina State University, where I apply computer vision and AI systems to optimize advanced 3D printers. I’m exploring how data-driven methodologies can create smarter, more inclusive technology. Working with real-time data processing and data engineering for real world applications, I’m continually inspired by the practical applications of AI, yet I remain focused on ensuring these innovations are transparent and responsible. My aim is to align technical advancements with ethical standards, contributing to AI solutions that are impactful, fair, and accessible to all.            </p>
-          </section>
-          <section>
-            <span class="icon solid major fa-lock"></span>
-            <h3>AI and ML Expertise</h3>
-            <p>
-              My passion for AI and ML has been sharpened through applied research, industry internships, and academic projects. At Amazon, I led the development of a Generative AI-based finance tool with feedback-based retraining, gaining extensive experience in MLOps, model integration, and deployment. My AI interests encompass responsible AI, bias mitigation, and building transparent systems that address real-world business problems, which I continue to pursue actively in my graduate studies and research.
-            </p>
-          </section>
-          <section>
-            <span class="icon solid major fa-cog"></span>
-            <h3>Projects and Publications</h3>
-            <p>
-              During my undergraduate studies, I led a project on electricity market price optimization, where we developed a predictive model-based power price tagging system using hierarchical optimization and deep learning. This work is currently under review for publication. I also contributed to research on recommender systems in online airline reviews using NLP, which is under review as well. Furthermore, I recently accepted and submitted a book chapter titled Generative Transformers and Text Generation Models for IETE Generative AI Unleashed. Additionally, my internship as an Applied Scientist at Amazon involved developing an end-to-end ML system for a Gen AI-based finance tool, leveraging feedback-based retraining mechanisms to advance finance automation, further solidifying my experience in practical, impactful AI-driven innovation.
-            </p>
-          </section>
-          <section>
-            <span class="icon solid major fa-desktop"></span>
-            <h3>Tech I've Worked With</h3>
-            <p>
-              I have hands-on experience with a range of technologies and tools, including programming in Python, SQL, C, C++, MATLAB, Assembly, Embedded C, and working with ML frameworks such as TensorFlow and PyTorch. My expertise extends to cloud platforms like AWS, as well as data visualization and management tools, enabling me to deliver full-stack AI solutions both on-premises and in cloud environments. This technical foundation allows me to bridge complex systems and scalable solutions effectively.
-            </p>
-          </section>
-          <section>
-            <span class="icon solid major fa-link"></span>
-            <h3>Recognitions &amp; Awards</h3>
-            <p>
-              Featured as “One of the Top 10 2022 Pie & AI Ambassadors Spotlight" in the world. As an Intel Student Ambassador for the Internet of Things, I led and engaged the tech community of 1000+ members on campus, fostering IoT innovation and technical knowledge sharing. Additionally, as a DeepLearning.AI Event Ambassador, I had the opportunity to conduct workshops and seminars to promote AI literacy and inspire budding technologists. My contributions have been acknowledged across various platforms, reflecting my commitment to advancing knowledge and empowering communities.
-            </p>
-          </section>
-          <section>
-            <span class="icon major fa-gem"></span>
+    <!-- Work / Experience spotlights -->
+    <section id="work" class="section" aria-labelledby="work-title">
+      <div class="container">
+        <h2 id="work-title">Experience highlights</h2>
+
+        <div class="spotlight">
+          <article>
+            <h3>Applied Scientist Intern — Amazon</h3>
+            <p>Built text classification systems with AWS SageMaker and a feedback‑driven retraining loop. Led MLOps automation to shrink manual review and boost reliability across iterations.</p>
+            <p><a class="btn secondary" href="https://www.deeplearning.ai/blog/2022-pie-ai-ambassador-spotlight-deepak" rel="noopener noreferrer">Learn more</a></p>
+          </article>
+          <div class="imgbox">
+            <img src="/static/images/pic01.jpg" alt="Amazon internship" width="1280" height="850" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <div class="spotlight">
+          <div class="imgbox">
+            <img src="/static/images/pic02.jpg" alt="Tech communities ambassador" width="1280" height="850" loading="lazy" decoding="async" />
+          </div>
+          <article>
+            <h3>Community — AI & IoT Ambassador</h3>
+            <p>Led workshops bridging AI and IoT as a DeepLearning.AI Event Ambassador and Intel IoT Student Ambassador. Selected among global standouts for hands‑on, practical education.</p>
+            <p><a class="btn secondary" href="https://inteliotclub.vercel.app" rel="noopener noreferrer">Club site</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills / What I do -->
+    <section id="skills" class="section" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title">What I do</h2>
+        <p class="muted">I apply ML rigor to real products — from multi‑agent RAG to cloud‑scale MLOps — with a bias toward clarity, safety, and shipping.</p>
+        <div class="grid" role="list">
+          <article class="card" role="listitem">
+            <h3>Research & Development</h3>
+            <p>Computer vision for additive manufacturing, real‑time data processing, and human‑centered AI. Clear metrics, transparent decisions, and reliability as a feature.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>AI & ML Engineering</h3>
+            <p>Feedback‑aware training, evaluation pipelines, bias analysis, and explainability. Comfortable moving from prototype to production with guardrails.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Projects & Writing</h3>
+            <p>Electricity market modeling, airline review NLP, and a chapter on generative transformers. Focused on reproducibility and real adoption.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Stack</h3>
+            <p>Python, SQL, C/C++, MATLAB, Embedded C. PyTorch & TensorFlow. AWS. Data viz & pipelines. End‑to‑end delivery on cloud or on‑prem.</p>
+          </article>
+          <article class="card" role="listitem">
+            <h3>Recognitions</h3>
+            <p>Top 10 Pie & AI Ambassador (2022). Built & led campus communities of 1k+ members to grow applied AI literacy.</p>
+          </article>
+          <article class="card" role="listitem">
             <h3>Open to Opportunities</h3>
-            <p>
-              I’m always on the lookout for exciting projects and collaborations in Data Science, AI, IoT, and software development. Let’s connect and innovate together!
-            </p>
-          </section>
+            <p>Collaborations in AI, Data, IoT, and software. If your team ships responsibly and cares about explainability, let’s talk.</p>
+          </article>
         </div>
-        <ul class="actions">
-          <li>
-            <a href="https://github.com/deepaksaipendyala?tab=repositories" class="button">Learn more</a>
-          </li>
-        </ul>
+        <p style="margin-top:14px"><a class="btn" href="https://github.com/deepaksaipendyala?tab=repositories" rel="noopener noreferrer">Explore repositories</a></p>
       </div>
     </section>
 
-    <!-- Feedback -->
-    <section id="three" class="wrapper style1 fade-up">
-      <div class="inner">
-        <h2>Gimme Feedback!</h2>
-        <p>
-          Why this form? Because my integrated project 'Automated Thank You Email to User and Feedback to Me' kicks in.
-          Got a feature suggestion or collab idea? Drop your thoughts below! (FYI: if the email server goes down because of SMTP issues, please ping me.)
-        </p>
-        <div class="split style1">
-          <section>
-            <form method="post" action="/submit_form">
-              <div class="fields">
-                <div class="field half">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" id="name" required />
-                </div>
-                <div class="field half">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" id="email" required />
-                </div>
-                <div class="field">
-                  <label for="message">Message</label>
-                  <textarea name="message" id="message" rows="5"></textarea>
-                </div>
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div>
+          <h2 id="contact-title">Get in touch</h2>
+          <p class="muted">Short and clear works best. You’ll get an automated confirmation and a reply if it’s a fit.</p>
+          <form id="contact-form" method="post" action="/submit_form" novalidate>
+            <div class="row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required />
               </div>
-              <ul class="actions">
-                <li><input type="submit" value="Fly!" class="button submit" /></li>
-                <li><input type="reset" value="Reset" /></li>
-              </ul>
-            </form>
-          </section>
-          <section>
-            <ul class="contact">
-              <li>
-                <h3>Address</h3>
-                <span>
-                  Raleigh,<br />
-                  North Carolina,<br />
-                  USA.
-                </span>
-              </li>
-              <li>
-                <h3>Email</h3>
-                <a href="mailto:caterer.05beeches@icloud.com?subject=Feedback&body=Message">
-                  Send an email.
-                </a>
-              </li>
-              <li>
-                <h3>Phone</h3>
-                <span>1CC38ED35746 (encrypted)</span>
-              </li>
-              <li>
-                <h3>Social</h3>
-                <ul class="icons">
-                  <li>
-                    <a href="https://twitter.com/deepak_sai_" class="icon brands fa-twitter">
-                      <span class="label">Twitter</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.facebook.com/deepak.pendyala.9" class="icon brands fa-facebook-f">
-                      <span class="label">Facebook</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/deepaksaipendyala" class="icon brands fa-github">
-                      <span class="label">GitHub</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/deepak_sai.zip" class="icon brands fa-instagram">
-                      <span class="label">Instagram</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/deepaksaip" class="icon brands fa-linkedin-in">
-                      <span class="label">LinkedIn</span>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </section>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+              </div>
+            </div>
+            <div style="margin-top:12px">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="What would you like to build?" required></textarea>
+            </div>
+            <!-- Honeypot -->
+            <div class="hp" aria-hidden="true">
+              <label for="company">Company</label>
+              <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="actions">
+              <button class="btn" type="submit">Send</button>
+              <button class="btn secondary" type="reset">Reset</button>
+            </div>
+            <p id="form-msg" class="message" role="status" aria-live="polite"></p>
+          </form>
+          <p class="help">If SMTP has issues, email: <a href="mailto:caterer.05beeches@icloud.com?subject=Portfolio%20Contact">caterer.05beeches@icloud.com</a></p>
         </div>
+        <aside aria-label="Contact details">
+          <div class="card">
+            <h3>Location</h3>
+            <p>Raleigh, North Carolina, USA</p>
+            <h3>Email</h3>
+            <p><a href="mailto:caterer.05beeches@icloud.com?subject=Feedback">Send an email</a></p>
+            <h3>Phone</h3>
+            <p>1CC38ED35746 (encrypted)</p>
+            <h3>Social</h3>
+            <ul>
+              <li><a href="https://twitter.com/deepak_sai_" rel="noopener noreferrer">Twitter</a></li>
+              <li><a href="https://www.facebook.com/deepak.pendyala.9" rel="noopener noreferrer">Facebook</a></li>
+              <li><a href="https://github.com/deepaksaipendyala" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="https://www.instagram.com/deepak_sai.zip" rel="noopener noreferrer">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/in/deepaksaip" rel="noopener noreferrer">LinkedIn</a></li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </section>
-  </div>
+  </main>
 
-  <!-- Footer -->
-  <footer id="footer" class="wrapper style1-alt">
-    <div class="inner">
-      <ul class="menu">
-        <li> Designed with ❤️ in 2021 &copy; Deepak Sai Pendyala. All rights reserved.</li>
-        <li>Designed with HTML5 UP</li>
-        <li>
-          <a href="https://github.com/deepaksaipendyala/Portfo">GitHub Repo</a>
-        </li>
+  <footer role="contentinfo">
+    <div class="container footer-wrap">
+      <p class="small">© 2021–2025 Deepak Sai Pendyala. All rights reserved. Built with semantic HTML, accessible styles, and zero jQuery.</p>
+      <ul>
+        <li><a href="https://github.com/deepaksaipendyala/Portfo" rel="noopener noreferrer">GitHub Repo</a></li>
+        <li><a href="#intro">Back to top</a></li>
       </ul>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-  <script src="./static/assets/js/jquery.min.js"></script>
-  <script src="./static/assets/js/jquery.scrollex.min.js"></script>
-  <script src="./static/assets/js/jquery.scrolly.min.js"></script>
-  <script src="./static/assets/js/browser.min.js"></script>
-  <script src="./static/assets/js/breakpoints.min.js"></script>
-  <script src="./static/assets/js/util.js"></script>
-  <script src="./static/assets/js/main.js"></script>
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('primary-nav');
+    toggle?.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+
+    // Basic client-side validation + honeypot
+    const form = document.getElementById('contact-form');
+    const msg = document.getElementById('form-msg');
+    form?.addEventListener('submit', (e) => {
+      const hp = document.getElementById('company');
+      const email = document.getElementById('email');
+      if (hp && hp.value) {
+        e.preventDefault();
+        msg.textContent = 'Submission blocked.';
+        msg.className = 'message err';
+        return;
+      }
+      if (email && !email.value.includes('@')) {
+        e.preventDefault();
+        msg.textContent = 'Enter a valid email.';
+        msg.className = 'message err';
+        return;
+      }
+      msg.textContent = 'Sending…';
+      msg.className = 'message';
+    });
+
+    // Reduce motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.style.scrollBehavior = 'auto';
+    }
+  </script>
 </body>
 </html>
