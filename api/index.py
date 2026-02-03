@@ -1,20 +1,18 @@
 import sys
 import os
 
-# Add parent directory to path so we can import server
+# Get the parent directory (project root)
 parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, parent_dir)
 
-# Change to parent directory to ensure relative paths work
+# Add to Python path
+if parent_dir not in sys.path:
+    sys.path.insert(0, parent_dir)
+
+# Change to project root
 os.chdir(parent_dir)
 
-try:
-    from server import app
-except Exception as e:
-    print(f"Error importing server: {e}")
-    import traceback
-    traceback.print_exc()
-    raise
+# Import Flask app
+from server import app
 
-# Vercel expects the app to be exposed as 'handler'
+# Export for Vercel
 handler = app
