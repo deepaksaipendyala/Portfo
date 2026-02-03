@@ -3,17 +3,16 @@
   "builds": [
     {
       "src": "api/index.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": [
+          "static/**",
+          "templates/**"
+        ]
+      }
     }
   ],
   "routes": [
-    {
-      "src": "/static/(.*)",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      },
-      "dest": "/static/$1"
-    },
     {
       "src": "/(.*)",
       "dest": "/api/index.py"

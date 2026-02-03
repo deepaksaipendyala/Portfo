@@ -2,7 +2,7 @@ import os
 import re
 from pathlib import Path
 from string import Template
-from flask import Flask, render_template, redirect, request, send_from_directory
+from flask import Flask, render_template, redirect, request, send_from_directory, abort
 from dotenv import load_dotenv
 import resend
 
@@ -56,6 +56,13 @@ def html_page(page_name):
     }
     if page_name in redirects:
         return redirect(redirects[page_name])
+    if page_name.startswith('.') or '..' in page_name or '/' in page_name or '\\' in page_name:
+        abort(404)
+    if not page_name.endswith('.html'):
+        abort(404)
+    template_path = os.path.join(app.root_path, 'templates', page_name)
+    if not os.path.isfile(template_path):
+        abort(404)
     return render_template(page_name)
 
 @app.route('/favicon.ico')
@@ -159,4 +166,3 @@ def submit_form():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
-
