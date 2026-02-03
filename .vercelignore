@@ -1,0 +1,19 @@
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+ENV/
+.venv
+*.db
+*.sqlite
+*.sqlite3
+database.csv
+database.txt
+test_resend.py
+.env
+.git
+.gitignore
+readme media/

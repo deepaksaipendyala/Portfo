@@ -14,7 +14,12 @@ resend_api_key = os.environ.get("RESEND_API_KEY")
 if resend_api_key:
     resend.api_key = resend_api_key
 
-app = Flask(__name__)
+# Get the base directory (works for both local and Vercel)
+BASE_DIR = Path(__file__).parent.absolute()
+
+app = Flask(__name__, 
+            template_folder=str(BASE_DIR / 'templates'),
+            static_folder=str(BASE_DIR / 'static'))
 
 @app.route('/')
 def home():
@@ -44,7 +49,7 @@ def html_page(page_name):
 
 @app.route('/favicon.ico')
 def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
+    return send_from_directory(str(BASE_DIR / 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 # Email validator
@@ -72,7 +77,7 @@ def is_spam(email_body, min_word_count=8):
 def send_user_email(data):
     recipient = data["email"]
     name = data["name"]
-    html_template = Template(Path('./templates/email.html').read_text())
+    html_template = Template((BASE_DIR / 'templates' / 'email.html').read_text())
     html_content = html_template.substitute({'name': name})
     
     params: resend.Emails.SendParams = {
