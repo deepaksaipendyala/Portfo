@@ -1,15 +1,19 @@
 import csv
 import os
 import re
-import smtplib
-from email.message import EmailMessage
 from pathlib import Path
 from string import Template
 from flask import Flask, render_template, redirect, request, send_from_directory
+from dotenv import load_dotenv
+import resend
 
-# Load environment variables
-sender_email = os.environ.get("email")
-sender_password = os.environ.get("password")
+# Load environment variables from .env file
+load_dotenv()
+
+# Initialize Resend with API key from environment
+resend_api_key = os.environ.get("RESEND_API_KEY")
+if resend_api_key:
+    resend.api_key = resend_api_key
 
 app = Flask(__name__)
 
@@ -81,33 +85,41 @@ def send_user_email(data):
     recipient = data["email"]
     name = data["name"]
     html_template = Template(Path('./templates/email.html').read_text())
-    msg = EmailMessage()
-    msg['from'] = 'Deepak Sai Pendyala'
-    msg['to'] = recipient
-    msg['subject'] = 'Your Feedback submitted!'
-    msg.set_content(html_template.substitute({'name': name}), 'html')
-
-    with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-        smtp.ehlo()
-        smtp.starttls()
-        smtp.login(sender_email, sender_password)
-        smtp.send_message(msg)
+    html_content = html_template.substitute({'name': name})
+    
+    params: resend.Emails.SendParams = {
+        "from": "Deepak Sai Pendyala <forms@deepaksaip.me>",
+        "to": [recipient],
+        "subject": "Your Feedback submitted!",
+        "html": html_content,
+        "reply_to": "forms@deepaksaip.me"
+    }
+    
+    email = resend.Emails.send(params)
+    print(f"[INFO] User confirmation email sent: {email}")
+    return email
 
 # Send alert to yourself
 def send_admin_email(data):
-    msg = EmailMessage()
-    msg['from'] = 'Deepak Sai Pendyala'
-    msg['to'] = 'deepak.pendyala.111@gmail.com'
-    msg['subject'] = 'Feedback received!'
-    msg.set_content(
-        f'Form received:\nSender Name: {data["name"]}\nSender Email: {data["email"]}\nMessage:\n{data["message"]}'
-    )
-
-    with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-        smtp.ehlo()
-        smtp.starttls()
-        smtp.login(sender_email, sender_password)
-        smtp.send_message(msg)
+    email_body = f'''Form received:
+    
+Sender Name: {data["name"]}
+Sender Email: {data["email"]}
+Message:
+{data["message"]}
+'''
+    
+    params: resend.Emails.SendParams = {
+        "from": "Deepak Sai Pendyala <forms@deepaksaip.me>",
+        "to": ["deepak.pendyala.111@gmail.com"],
+        "subject": "Feedback received!",
+        "html": f"<pre>{email_body}</pre>",
+        "reply_to": data["email"]
+    }
+    
+    email = resend.Emails.send(params)
+    print(f"[INFO] Admin notification email sent: {email}")
+    return email
 
 # Main form submission route
 @app.route('/submit_form', methods=['POST', 'GET'])
@@ -124,8 +136,14 @@ def submit_form():
 
             write_to_csv(data)
             write_to_database(data)
-            send_user_email(data)
-            send_admin_email(data)
+            if resend_api_key:
+                try:
+                    send_user_email(data)
+                    send_admin_email(data)
+                except Exception as email_error:
+                    print(f"[ERROR] Failed to send emails: {email_error}")
+            else:
+                print("[WARNING] Resend API key not found. Skipping email sending.")
 
             return redirect('/thankyou.html')
 

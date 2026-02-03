@@ -1,157 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Thank You - Deepak</title>
-    <meta charset="utf-8" />
-    <meta name="description" content="Thank you page for Deepak Sai Pendyala's Portfolio Website">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="/static/assets/css/main.css" />
-    <link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico')}}">
-    <noscript>
-        <link rel="stylesheet" href="/static/assets/css/noscript.css" />
-    </noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Received | Deepak Sai Pendyala</title>
+    <link rel="stylesheet" href="/static/assets/css/style.css">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: lightgrey;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
         }
-        .center {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 50%;
-        }
-        h1 {
-            color: black;
+
+        .thank-you-container {
+            max-width: 640px;
             text-align: center;
-            font-family: Cursive;
-            font-size: 40px;
+            background: rgba(18, 22, 30, 0.88);
+            border: 2px solid rgba(244, 247, 251, 0.22);
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
         }
-        .subheading {
-            text-align: center;
-            font-family: Arial, sans-serif;
-            color: black; /* Changed to black */
+
+        .thank-you-container h1 {
+            font-family: 'Kalam', cursive;
+            font-size: clamp(2.4rem, 4vw, 3.6rem);
+            margin-bottom: 1rem;
+            color: #f4f7fb;
         }
-        .continue-link {
-            display: block;
-            text-align: center;
-            margin-top: 20px;
+
+        .thank-you-container p {
+            color: #b9c2cf;
+            margin-bottom: 2rem;
+        }
+
+        .thank-you-img {
+            width: 100%;
+            max-width: 260px;
+            border-radius: 16px;
+            margin: 0 auto 2rem;
+            border: 1px solid rgba(244, 247, 251, 0.2);
         }
     </style>
 </head>
-<body class="is-preload">
 
-    <!-- Sidebar -->
-    <section id="sidebar">
-        <div class="inner">
-            <nav>
-                <ul>
-                    <li><a href="#intro">Welcome Buddy!</a></li>
-                    <li><a href="#one">Who am I?</a></li>
-                    <li><a href="#two">What I do</a></li>
-                    <li><a href="https://deepaksai.pythonanywhere.com/resume">Resume</a></li>
-                    <li><a href="#three">Get in touch</a></li>
-                </ul>
-            </nav>
-        </div>
-    </section>
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-        <!-- Thank You Section -->
-        <section class="wrapper style1 fullscreen fade-up">
-            <div class="inner">
-                <h1>Your Form is now Onboard, It will reach me in lightspeed!</h1>
-                <p class="subheading">We appreciate your time and effort.</p>
-                <img src="/static/images/thankyou.jpg" alt="Thank You" class="center">
-                <a href="https://deepaksai.pythonanywhere.com" class="continue-link">Return to Home</a>
-            </div>
-        </section>
-
-        <!-- Gimme Feedback Section -->
-        <section id="three" class="wrapper style1 fade-up">
-            <div class="inner">
-                <h2>Gimme Feedback!</h2>
-                <p>Why this form? Because my integrated project 'Automated Thank You Email to User and Feedback to Me' kicks in.</p>
-                <p>Feel free to suggest a new feature or collaborate on a project! Contact me, and please write down everything :)</p>
-                <p>Sometimes, the server responsible for sending emails goes down due to SMTP issues. Kindly ping me if it happens again.</p>
-
-                <div class="split style1">
-                    <section>
-                        <form method="post" action="/submit_form">
-                            <div class="fields">
-                                <div class="field half">
-                                    <label for="name">Name</label>
-                                    <input type="text" name="name" id="name" required />
-                                </div>
-                                <div class="field half">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" required />
-                                </div>
-                                <div class="field">
-                                    <label for="message">Message</label>
-                                    <textarea name="message" id="message" rows="5"></textarea>
-                                </div>
-                            </div>
-                            <ul class="actions">
-                                <li><input type="submit" value="Fly!" class="button submit" /></li>
-                                <li><input type="reset" value="Reset" /></li>
-                            </ul>
-                        </form>
-                    </section>
-                    <section>
-                        <ul class="contact">
-                            <li>
-                                <h3>Address</h3>
-                                <span>Raleigh,<br />
-                                    North Carolina,<br />
-                                    USA.</span>
-                            </li>
-                            <li>
-                                <h3>Email</h3>
-                                <a href="mailto:caterer.05beeches@icloud.com?subject=Feedback&body=Message">Send an email.</a>
-                            </li>
-                            <li>
-                                <h3>Phone</h3>
-                                <span>1CC38ED35746 (encrypted lol)</span>
-                            </li>
-                            <li>
-                                <h3>Social</h3>
-                                <ul class="icons">
-                                    <li><a href="https://twitter.com/deepak_sai_" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                                    <li><a href="https://www.facebook.com/deepak.pendyala.9" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                                    <li><a href="https://github.com/deepaksaipendyala" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-                                    <li><a href="https://www.instagram.com/deepak_sai.zip" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                                    <li><a href="https://www.linkedin.com/in/deepaksaip" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-            </div>
-        </section>
-
+<body>
+    <div class="thank-you-container">
+        <img src="/static/images/thankyou_stickman.jpeg" alt="Thank you illustration" class="thank-you-img">
+        <h1>Message Sent</h1>
+        <p>Thanks for reaching out. I have received your message and will respond as soon as possible.</p>
+        <a href="/" class="btn primary">Back to Home</a>
     </div>
-
-    <!-- Footer -->
-    <footer id="footer" class="wrapper style1-alt">
-        <div class="inner">
-            <ul class="menu">
-                <li>&copy; Deepak Sai Pendyala. All rights reserved.</li>
-                <li>Designed with HTML5 UP</li>
-                <li>This Website's code is live at <a href="https://github.com/deepaksaipendyala/Portfo">GitHub Repo 'Portfo'</a></li>
-            </ul>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="./static/assets/js/jquery.min.js"></script>
-    <script src="./static/assets/js/jquery.scrollex.min.js"></script>
-    <script src="./static/assets/js/jquery.scrolly.min.js"></script>
-    <script src="./static/assets/js/browser.min.js"></script>
-    <script src="./static/assets/js/breakpoints.min.js"></script>
-    <script src="./static/assets/js/util.js"></script>
-    <script src="./static/assets/js/main.js"></script>
-
 </body>
+
 </html>

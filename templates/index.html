@@ -1,341 +1,458 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta
-    name="description"
-    content="Deepak Sai Pendyala — MS CS @ NC State ’26. Builds explainable, production‑grade AI: multi‑agent RAG (SciAI), MLOps on AWS/GCP, and real‑time CV for additive manufacturing."
-  />
-  <meta
-    name="keywords"
-    content="Deepak, Deepaksai, Deepaksaipendyala, AI, Machine Learning, NC State, ActiveRAG, multi-agent, RAG, MLOps, Amazon, SproutsAI, Intel IoT Club, DeepLearning.AI Ambassador"
-  />
-  <meta name="author" content="Pendyala Deepak Sai" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <title>Deepak Sai Pendyala</title>
-  <link rel="stylesheet" href="/static/assets/css/main.css" />
-  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" />
-  <noscript>
-    <link rel="stylesheet" href="/static/assets/css/noscript.css" />
-  </noscript>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepak Sai Pendyala | AI/ML Engineer</title>
+  <meta name="description"
+    content="Deepak Sai Pendyala builds reliable, scalable, and explainable AI systems across agentic AI, multi-agent RAG, and ML platforms.">
+  <link rel="stylesheet" href="/static/assets/css/style.css">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="is-preload">
-  <!-- Sidebar -->
-  <section id="sidebar" aria-label="Site navigation">
-    <div class="inner">
-      <nav>
-        <ul>
-          <li><a href="#intro">Welcome</a></li>
-          <li><a href="#one">About</a></li>
-          <li><a href="#two">Work</a></li>
-          <li><a href="https://deepaksaip.me/resume" target="_blank" rel="noopener noreferrer">Resume</a></li>
-          <li><a href="#three">Contact</a></li>
-        </ul>
-      </nav>
+
+<body data-active-track="ai">
+  <nav class="site-nav">
+    <div class="brand">
+      <a class="brand-name" href="#intro">Deepak Sai</a>
+      <div class="track-toggle" role="tablist" aria-label="Profile focus">
+        <button class="track-btn active" type="button" role="tab" aria-selected="true" data-track="ai">AI/ML</button>
+        <button class="track-btn" type="button" role="tab" aria-selected="false" data-track="sde">SDE</button>
+      </div>
     </div>
-  </section>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+    <ul class="nav-links" id="nav-menu">
+      <li><a href="#intro">Home</a></li>
+      <li><a href="#work">Experience</a></li>
+      <li><a href="#skills">Expertise</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="https://deepaksaip.me/resume" target="_blank" rel="noopener">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <!-- Wrapper -->
-  <div id="wrapper">
-    <!-- Intro -->
-    <section id="intro" class="wrapper style1 fullscreen fade-up">
-      <div class="inner">
-        <h1>Deepak Sai Pendyala</h1>
-        <p>
-          I build reliable, explainable AI. I’m a CS master’s student at North Carolina State University (’26) working on multi‑agent RAG, evaluation, and human‑readable outputs. Previously: Applied Scientist Intern at Amazon; AI Engineer at SproutsAI; research on real‑time CV for additive manufacturing.
-        </p>
-        <ul class="actions">
-          <li><a href="#one" class="button scrolly">See more</a></li>
-        </ul>
+  <main>
+    <section id="intro" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow" data-track="ai">AI/ML Engineer | Agentic AI Systems | Multi-Agent RAG | Applied ML Research</p>
+          <p class="eyebrow" data-track="sde">Software Development Engineer | Full-Stack Systems | Cloud &amp; Distributed Platforms</p>
+          <h1>Deepak Sai Pendyala</h1>
+          <p class="lead" data-track="ai">
+            I am an AI/ML engineer and applied researcher focused on building reliable, scalable, and explainable AI
+            systems. I specialize in agentic AI architectures, multi-agent orchestration, Retrieval-Augmented
+            Generation, and end-to-end ML platforms.
+          </p>
+          <p class="lead" data-track="ai">
+            I currently conduct applied AI research at North Carolina State University while building enterprise-grade
+            agentic platforms in industry.
+          </p>
+          <p class="lead" data-track="sde">
+            I’m a software engineer focused on building scalable, secure, and high-performance systems, with experience
+            across full-stack platforms, microservices, distributed workflows, and cloud-native infrastructure.
+          </p>
+          <p class="lead" data-track="sde">
+            My work bridges backend systems, frontend platforms, DevOps, and data-heavy applications, with strong
+            engineering rigor around reliability, performance, and maintainability. I currently engineer full-stack
+            platforms at North Carolina State University and have shipped scalable systems in industry environments.
+          </p>
+          <ul class="bullet-list" data-track="ai">
+            <li>Autonomous multi-agent reasoning systems</li>
+            <li>Hybrid retrieval pipelines combining vector search, web data, and knowledge graphs</li>
+            <li>Automated AI evaluation frameworks for reliability and failure detection</li>
+            <li>Production ML systems with strong MLOps foundations</li>
+          </ul>
+          <ul class="bullet-list" data-track="sde">
+            <li>Clean service architectures</li>
+            <li>Optimized databases and APIs</li>
+            <li>CI/CD pipelines and containerized deployments</li>
+            <li>Real-time data processing and monitoring</li>
+          </ul>
+          <div class="hero-actions">
+            <a href="https://deepaksaip.me/resume" target="_blank" rel="noopener" class="btn primary">View Resume</a>
+            <a href="#contact" class="btn ghost">Let's Talk</a>
+            <a href="https://calendly.com/deepaksaipendyala/30min" target="_blank" rel="noopener" class="btn ghost">Schedule</a>
+          </div>
+          <div class="hero-tags" data-track="ai">
+            <span class="chip">Multi-agent reasoning</span>
+            <span class="chip">Hybrid retrieval + KG</span>
+            <span class="chip">Automated evaluation</span>
+            <span class="chip">MLOps at scale</span>
+          </div>
+          <div class="hero-tags" data-track="sde">
+            <span class="chip">Full-stack systems</span>
+            <span class="chip">Microservices + APIs</span>
+            <span class="chip">Cloud-native deployments</span>
+            <span class="chip">Reliability + performance</span>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="image-frame">
+            <img src="/static/images/hero_stickman1.jpeg" alt="Illustration of an AI stickman on a chalkboard" data-track="ai">
+            <img src="/static/images/hero_stickman2.jpeg" alt="Illustration of a software engineer stickman" data-track="sde">
+          </div>
+          <div class="hero-card" data-track="ai">
+            <p class="hero-card-title">Now building</p>
+            <p>Advanced agentic AI platforms for scientific labs, with citation-grounded reasoning and evaluation.</p>
+            <a href="#work" class="text-link">Explore experience</a>
+          </div>
+          <div class="hero-card" data-track="sde">
+            <p class="hero-card-title">Now shipping</p>
+            <p>Scalable full-stack platforms with clean architectures, optimized APIs, and cloud-native deployments.</p>
+            <a href="#work" class="text-link">Explore experience</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Spotlight Sections -->
-    <section id="one" class="wrapper style2 spotlights">
-      <!-- STEPS / SciAI -->
-      <section>
-        <a href="https://steps-center.org" class="image" target="_blank" rel="noopener noreferrer">
-          <img
-            src="./static/images/pic03.jpg"
-            alt="NC State research — SciAI multi‑agent RAG for scientific QA"
-            data-position="center center"
-            loading="lazy"
-          />
-        </a>
-        <div class="content">
-          <div class="inner">
-            <h2>STEPS Center — SciAI (2025–)</h2>
-            <p>
-              Graduate Research Assistant building <strong>SciAI</strong>: a trustworthy multi‑agent system for scientific Q&A. It integrates ActiveRAG retrieval, validation agents, and citation‑grounded reasoning to reduce hallucinations. I’m also designing a three‑phase evaluation framework (retrieval → reasoning → generation) with a curated textbook/lecture benchmark.
-            </p>
-            <ul class="actions">
-              <li><a href="https://deepaksaip.me" class="button" target="_blank" rel="noopener noreferrer">Overview</a></li>
-            </ul>
-          </div>
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Experience</h2>
+          <p data-track="ai">Applied research and production engineering across AI, analytics, and MLOps.</p>
+          <p data-track="sde">Full-stack systems engineering across research platforms, cloud infrastructure, and distributed workflows.</p>
         </div>
-      </section>
-
-      <!-- SproutsAI -->
-      <section>
-        <div class="content">
-          <div class="inner">
-            <h2>AI Engineer — SproutsAI (Summer ’25)</h2>
-            <p>
-              Shipped an agentic analytics system that answered <strong>150+ natural‑language questions</strong> by compiling MongoDB aggregations across <strong>15+ databases</strong>. Hybrid retrieval with Qdrant + Neo4j enabled schema‑aware joins and explainable, chart‑ready outputs. I owned design RFCs, eval/monitoring, and stakeholder demos.
-            </p>
-            <ul class="actions">
-              <li><a href="https://www.sproutsai.com" class="button" target="_blank" rel="noopener noreferrer">Company</a></li>
+        <div class="card-grid experience-grid" data-track="ai">
+          <article class="card">
+            <h3>Graduate Research Assistant - Applied AI</h3>
+            <p>STEPS Center, North Carolina State University</p>
+            <ul class="card-list">
+              <li>Built a scalable on-prem agentic AI platform for scientific labs.</li>
+              <li>Integrated paper scraping, document parsing, and knowledge graph ingestion.</li>
+              <li>Deployed autonomous analysis agents for extraction, comparison, and visualization.</li>
             </ul>
-          </div>
-        </div>
-        <a href="https://www.deeplearning.ai/blog/pie-ai-ambassadors-2022" class="image" target="_blank" rel="noopener noreferrer">
-          <img
-            src="./static/images/pic01.jpg"
-            alt="Agentic AI and RAG systems in production"
-            data-position="center center"
-            loading="lazy"
-          />
-        </a>
-      </section>
-
-      <!-- Amazon -->
-      <section>
-        <a href="https://www.amazon.science" class="image" target="_blank" rel="noopener noreferrer">
-          <img
-            src="./static/images/pic02.jpg"
-            alt="Applied Scientist Intern — Amazon"
-            data-position="center center"
-            loading="lazy"
-          />
-        </a>
-        <div class="content">
-          <div class="inner">
-            <h2>Applied Scientist Intern — Amazon (’23)</h2>
-            <p>
-              Built ML/GenAI automation for Finance/Tax workflows on AWS SageMaker with event‑driven MLOps (Lambda, Step Functions, S3). Impact: <strong>60% cut</strong> in manual review time; <strong>90%</strong> drop in human effort via feedback‑based retraining; <strong>80%</strong> scalability boost.
-            </p>
-            <ul class="actions">
-              <li><a href="https://deepaksaip.me/resume" class="button" target="_blank" rel="noopener noreferrer">Project details</a></li>
+            <p class="metrics">Local LLM deployments from 3B to 70B parameters across heterogeneous hardware.</p>
+            <ul class="card-list">
+              <li>Automated AI evaluation with synthetic Q/A, LLM-judge scoring, and three-stage checks.</li>
+              <li>Failure detection and rerouting for continuous reliability monitoring.</li>
             </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- CAMAL / DARPA -->
-      <section>
-        <div class="content">
-          <div class="inner">
-            <h2>Research — CAMAL (’24–’25)</h2>
-            <p>
-              On a DARPA‑funded effort at NC State’s CAMAL Lab, I integrated ML into 3D‑printing pipelines for defense‑grade parts, achieving a <strong>4.3×</strong> inference speedup and ~<strong>70%</strong> gains in accuracy/efficiency on internal benchmarks.
-            </p>
-            <ul class="actions">
-              <li><a href="https://camal.ncsu.edu" class="button" target="_blank" rel="noopener noreferrer">Lab</a></li>
+          </article>
+          <article class="card">
+            <h3>AI Engineer Intern</h3>
+            <p>SproutsAI</p>
+            <ul class="card-list">
+              <li>Built an agentic analytics platform turning natural language into chart-ready insights.</li>
+              <li>Multi-agent query planning, hybrid retrieval with Qdrant + Neo4j, automated evaluation.</li>
+              <li>Kubernetes deployment with CI/CD and monitoring.</li>
             </ul>
-          </div>
-        </div>
-        <a href="https://camal.ncsu.edu" class="image" target="_blank" rel="noopener noreferrer">
-          <img
-            src="./static/images/pic03.jpg"
-            alt="Additive manufacturing — real‑time CV & analytics"
-            data-position="center center"
-            loading="lazy"
-          />
-        </a>
-      </section>
-    </section>
-
-    <!-- What I Do / Work -->
-    <section id="two" class="wrapper style3 fade-up">
-      <div class="inner">
-        <h2>Work</h2>
-        <p>
-          I ship systems that are explainable, measurable, and maintainable.
-        </p>
-        <div class="features">
-          <section>
-            <span class="icon solid major fa-code" aria-hidden="true"></span>
-            <h3>Research &amp; Development</h3>
-            <p>
-              Multi‑agent reasoning for scientific QA; real‑time CV for additive manufacturing; evaluation frameworks that keep models accountable.
-            </p>
-          </section>
-          <section>
-            <span class="icon solid major fa-lock" aria-hidden="true"></span>
-            <h3>AI/ML</h3>
-            <p>
-              LLMs, RAG, LangGraph, LangChain, fine‑tuning. Feedback loops, multi‑tier evaluation, and on‑call MLOps on AWS/GCP.
-            </p>
-          </section>
-          <section>
-            <span class="icon solid major fa-cog" aria-hidden="true"></span>
-            <h3>Data &amp; MLOps</h3>
-            <p>
-              Python; PyTorch/TensorFlow; Docker/Kubernetes; AWS SageMaker, Step Functions, EventBridge; Kafka, PySpark; MongoDB, MySQL, Neo4j, Qdrant.
-            </p>
-          </section>
-          <section>
-            <span class="icon solid major fa-link" aria-hidden="true"></span>
-            <h3>Recognition</h3>
-            <p>
-              DeepLearning.AI <strong>Top 10 Ambassador (2022)</strong>. Founded Intel IoT Club; grew it to <strong>2000+ members</strong> with 35+ core team.
-            </p>
-          </section>
-          <section>
-            <span class="icon solid major fa-book" aria-hidden="true"></span>
-            <h3>Publication</h3>
-            <p>
-              Co‑author, <em>Generative Transformers and Text Generation Models</em>, in IET <em>Generative AI Unleashed</em> (2025).
-            </p>
-          </section>
-          <section>
-            <span class="icon major fa-gem" aria-hidden="true"></span>
-            <h3>Open to Opportunities</h3>
-            <p>
-              Graduating May 2026. Roles in AI/ML, Applied Science, or Software Engineering where reliability, explainability, and shipping matter.
-            </p>
-          </section>
-        </div>
-
-        <!-- Selected Projects -->
-        <h3 style="margin-top:2rem;">Selected Projects</h3>
-        <div class="features">
-          <section>
-            <span class="icon solid fa-project-diagram" aria-hidden="true"></span>
-            <h4>ActiveRAG Next</h4>
-            <p>
-              Multi‑agent RAG with coordinator/analyst/reasoner/validator, RAG‑Fusion retrieval, knowledge‑graph extraction, and Streamlit UI with live traces.
-            </p>
-            <ul class="actions">
-              <li><a class="button" href="https://github.com/deepaksaipendyala/ActiveRAG-Next" target="_blank" rel="noopener">GitHub</a></li>
+            <p class="metrics">Impact: 60% accuracy gain, 40% latency reduction, 99.9% uptime, 2x engagement.</p>
+          </article>
+          <article class="card">
+            <h3>Research Assistant - Machine Learning</h3>
+            <p>CAMAL Lab, North Carolina State University</p>
+            <ul class="card-list">
+              <li>Built real-time ML monitoring for DARPA-funded additive manufacturing systems.</li>
+              <li>Integrated predictive models into production pipelines for quality control.</li>
+              <li>Developed anomaly detection with FastAPI, OpenCV, and GPU-optimized inference.</li>
             </ul>
-          </section>
-          <section>
-            <span class="icon solid fa-bolt" aria-hidden="true"></span>
-            <h4>Power Price Tagging</h4>
-            <p>
-              Genetic‑algorithm auction + deep learning for market price tagging and ELD optimization on IEX data; LSTM baselines with actionable insights.
-            </p>
-            <ul class="actions">
-              <li><a class="button" href="https://www.kaggle.com/code/deepaksaipendyala/predictive-model-based-power-price-tagging" target="_blank" rel="noopener">Kaggle</a></li>
+            <p class="metrics">4.3x reduction in inference time, 70% improvement in accuracy and efficiency.</p>
+          </article>
+          <article class="card">
+            <h3>Applied Scientist Intern</h3>
+            <p>Amazon</p>
+            <ul class="card-list">
+              <li>Developed ML and GenAI automation for finance and tax workflows.</li>
+              <li>Built multilingual commodity code classifier using transformer models.</li>
+              <li>Created event-driven MLOps pipelines with automated retraining loops.</li>
             </ul>
-          </section>
+            <p class="metrics">60% manual review reduction, 90% effort decrease, 80% scalability improvement.</p>
+          </article>
         </div>
-
-        <ul class="actions">
-          <li>
-            <a href="https://github.com/deepaksaipendyala?tab=repositories" class="button" target="_blank" rel="noopener noreferrer">View GitHub</a>
-          </li>
-        </ul>
+        <div class="card-grid experience-grid" data-track="sde">
+          <article class="card">
+            <h3>Graduate Research Assistant - Full-Stack Platform Engineering</h3>
+            <p>STEPS Center, North Carolina State University</p>
+            <ul class="card-list">
+              <li>Designed and managed a full-stack Django + React AI platform for research workflows and demos.</li>
+              <li>Implemented RBAC authentication, audit logging, and optimized REST APIs for high-traffic usage.</li>
+              <li>Built responsive UI components for research visualization.</li>
+              <li>Redesigned databases with normalized schemas, indexing, and query tuning.</li>
+            </ul>
+            <p class="metrics">Impact: ~40% improvement in API latency and frontend responsiveness, plus higher stability.</p>
+          </article>
+          <article class="card">
+            <h3>AI Engineer Intern (Full-Stack &amp; Cloud Systems)</h3>
+            <p>SproutsAI</p>
+            <ul class="card-list">
+              <li>Built a full-stack analytics platform using React, FastAPI, and MongoDB.</li>
+              <li>Containerized microservices, parallelized query execution, and added caching layers.</li>
+              <li>Deployed on AWS and GCP Kubernetes clusters with GitHub Actions CI/CD.</li>
+              <li>Integrated monitoring and evaluation pipelines for reliability.</li>
+            </ul>
+            <p class="metrics">Impact: 3x faster queries, 40% latency reduction, 99.9% uptime.</p>
+          </article>
+          <article class="card">
+            <h3>Research Assistant - Real-Time Systems Engineering</h3>
+            <p>CAMAL Lab, North Carolina State University</p>
+            <ul class="card-list">
+              <li>Built a FastAPI real-time anomaly detection platform for manufacturing workflows.</li>
+              <li>Implemented live video processing with OpenCV and GPU-optimized inference.</li>
+              <li>Added socket-based alerts, async processing, and monitoring dashboards.</li>
+            </ul>
+            <p class="metrics">Impact: 4.3x reduction in inference latency and earlier fault detection.</p>
+          </article>
+          <article class="card">
+            <h3>Applied Scientist Intern (Systems + MLOps Engineering)</h3>
+            <p>Amazon</p>
+            <ul class="card-list">
+              <li>Engineered event-driven ML workflows with SageMaker, Lambda, and Step Functions.</li>
+              <li>Built fault-tolerant async inference with retries and clean service boundaries.</li>
+              <li>Integrated microservices with ECS, API Gateway, and CloudWatch.</li>
+              <li>Defined REST API contracts and connected frontend systems to ML backends.</li>
+            </ul>
+            <p class="metrics">Impact: 90% reduction in manual review, 80% scalability gain, ~9 minutes faster per job.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- Feedback -->
-    <section id="three" class="wrapper style1 fade-up">
-      <div class="inner">
-        <h2>Feedback</h2>
-        <p>
-          I read everything. If SMTP flakes out, reach me on LinkedIn.
-        </p>
-        <div class="split style1">
-          <section>
-            <form method="post" action="/submit_form" novalidate>
-              <div class="fields">
-                <div class="field half">
-                  <label for="name">Name</label>
-                  <input type="text" name="name" id="name" required aria-required="true" />
-                </div>
-                <div class="field half">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" id="email" required aria-required="true" />
-                </div>
-                <div class="field">
-                  <label for="message">Message</label>
-                  <textarea name="message" id="message" rows="5" placeholder="What should I build next?"></textarea>
-                </div>
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Core Expertise</h2>
+          <p data-track="ai">Deep focus on agentic AI, RAG, and scalable ML systems.</p>
+          <p data-track="sde">Full-stack engineering with rigor around reliability, performance, and maintainability.</p>
+        </div>
+        <div class="features-grid" data-track="ai">
+          <div class="feature-item">
+            <h3>Agentic AI and Multi-Agent Systems</h3>
+            <p>LangGraph orchestration, modular agent roles, shared state models, and self-healing pipelines.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Retrieval-Augmented Generation</h3>
+            <p>Hybrid retrieval, RAG-Fusion, query expansion, multi-hop retrieval, citation-backed generation.</p>
+          </div>
+          <div class="feature-item">
+            <h3>LLM Engineering</h3>
+            <p>Fine-tuning large language models, multilingual NLP systems, prompt engineering, agent workflows.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Machine Learning</h3>
+            <p>Deep learning with PyTorch and TensorFlow, time-series forecasting, computer vision, optimization.</p>
+          </div>
+          <div class="feature-item">
+            <h3>MLOps and AI Infrastructure</h3>
+            <p>Automated retraining, event-driven workflows, CI/CD for ML systems, scalable inference on Kubernetes.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Data and Knowledge Systems</h3>
+            <p>Vector databases, knowledge graphs, structured and unstructured data ingestion.</p>
+          </div>
+        </div>
+        <div class="features-grid" data-track="sde">
+          <div class="feature-item">
+            <h3>Full-Stack Development</h3>
+            <p>Django + React platforms, FastAPI microservices, REST API design, contract testing, responsive UI.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Backend &amp; Distributed Systems</h3>
+            <p>Microservices architecture, async I/O, parallel execution, caching, query optimization, event-driven workflows.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Cloud &amp; DevOps</h3>
+            <p>Dockerized applications, Kubernetes on AWS/GCP, GitHub Actions CI/CD, monitoring and logging.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Data &amp; Infrastructure</h3>
+            <p>PostgreSQL, MySQL, MongoDB, DynamoDB, Redis, schema design, migrations, index tuning.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Reliability &amp; Engineering Practices</h3>
+            <p>Unit and integration testing, error handling and retries, observability dashboards, clean architecture.</p>
+          </div>
+        </div>
+        <div class="mini-grid" data-track="ai">
+          <article class="mini-card">
+            <h4>Publications</h4>
+            <p>RL-CURATE-KG: Multi-Agent RL for Scalable KG Curation (IEEE Big Data 2025).</p>
+            <p>Generative Transformers and Text Generation Models (IET Generative AI Unleashed 2025).</p>
+          </article>
+          <article class="mini-card">
+            <h4>Leadership and Recognition</h4>
+            <p>Founder and Lead, Intel IoT Club (2,000+ members, 10+ national AI trainings).</p>
+            <p>Top 10 Global DeepLearning.AI Ambassador (2022).</p>
+            <p>Top 0.05% Amazon ML Summer School (converted to Applied Scientist Intern).</p>
+          </article>
+          <article class="mini-card">
+            <h4>Certifications</h4>
+            <p>Intel Edge AI Developer.</p>
+            <p>AWS Machine Learning Foundations.</p>
+            <p>Google IT Support Specialization.</p>
+          </article>
+        </div>
+        <div class="mini-grid" data-track="sde">
+          <article class="mini-card">
+            <h4>Engineering Tech Stack</h4>
+            <p>Languages: Python, C, C++, JavaScript, Bash, MATLAB, Embedded C, Assembly.</p>
+            <p>Frameworks: React, Node.js, Django, FastAPI, Flask, Streamlit.</p>
+            <p>Cloud &amp; DevOps: AWS, GCP, Docker, Kubernetes, GitHub Actions CI/CD.</p>
+            <p>Data Systems: PostgreSQL, MySQL, MongoDB, DynamoDB, Redis.</p>
+          </article>
+          <article class="mini-card">
+            <h4>Leadership and Recognition</h4>
+            <p>Founder and Lead, Intel IoT Club (2,000+ members, 10+ national hackathons and trainings).</p>
+            <p>Top 10 Global DeepLearning.AI Ambassador (2022).</p>
+            <p>Top 0.05% Amazon ML Summer School (converted to internship).</p>
+          </article>
+          <article class="mini-card">
+            <h4>Engineering Philosophy</h4>
+            <p>I focus on clean, maintainable architectures, measurable performance improvements, reliability over unnecessary complexity, and strong automation and testing.</p>
+            <p>I enjoy building systems that scale, stay stable under load, and are easy for teams to extend.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Flagship Projects</h2>
+          <p data-track="ai">Selected AI/ML systems that combine research depth with production impact.</p>
+          <p data-track="sde">Selected software systems focused on clean architecture, performance, and reliability.</p>
+        </div>
+        <div class="card-grid" data-track="ai">
+          <article class="card">
+            <h3>ActiveRAG Next</h3>
+            <p>A production-grade, explainable multi-agent RAG platform.</p>
+            <ul class="card-list">
+              <li>LangGraph-based orchestration with coordinator, retrieval, reasoning, validation, feedback.</li>
+              <li>Hybrid retrieval with RAG-Fusion and web augmentation.</li>
+              <li>Citation-backed responses with confidence-triggered reruns.</li>
+              <li>Real-time Streamlit UI with traceable agent execution.</li>
+            </ul>
+            <p class="metrics">Stack: Python, FastAPI, LangGraph, Streamlit, Qdrant, Neo4j.</p>
+          </article>
+          <article class="card">
+            <h3>Predictive Power Price Tagging</h3>
+            <p>Hybrid optimization and forecasting system for energy markets.</p>
+            <ul class="card-list">
+              <li>LSTM-based deep learning for trajectory forecasting.</li>
+              <li>Genetic algorithms for resource allocation and pricing strategies.</li>
+              <li>Economic Load Dispatch optimization for market clearing price forecasting.</li>
+            </ul>
+          </article>
+        </div>
+        <div class="card-grid" data-track="sde">
+          <article class="card">
+            <h3>Full-Stack Research Platform (Django + React)</h3>
+            <p>Production-ready web platform supporting research demos and workflows.</p>
+            <ul class="card-list">
+              <li>Secure authentication with RBAC and audit logging.</li>
+              <li>Optimized REST APIs and responsive UI components.</li>
+              <li>Database schema redesign, migrations, and performance tuning.</li>
+              <li>CI/CD automation and rapid server portability.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>ActiveRAG Next - Microservice-Style Multi-Agent Platform</h3>
+            <p>AI-focused system showcasing strong SDE design and orchestration.</p>
+            <ul class="card-list">
+              <li>Modular microservice-like agents with shared state via Pydantic models.</li>
+              <li>Async I/O communication with FastAPI backend and Streamlit frontend.</li>
+              <li>Emphasis on clean interfaces, scalability, and observability.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Enigma - Distributed Discord Music System</h3>
+            <p>Scalable music streaming and recommendation platform.</p>
+            <ul class="card-list">
+              <li>Multi-source streaming, Spotify-integrated search, queue management.</li>
+              <li>Recommendation engine over 24K+ tracks with playlist curation.</li>
+              <li>Cloud deployment on GCP with CI/CD, logging, and monitoring.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Event-Driven ML Orchestration Systems (Industry)</h3>
+            <p>Reusable cloud workflows for automated ML operations.</p>
+            <ul class="card-list">
+              <li>Step Functions orchestration with Lambda triggers and SageMaker jobs.</li>
+              <li>Fault tolerance with retries and async execution.</li>
+              <li>Operational monitoring and clean service boundaries.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Get In Touch</h2>
+          <p>Have a project, research idea, or opportunity? I would love to collaborate.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-illustration-wrap">
+              <img src="/static/images/contact_stickman.jpeg" alt="Contact illustration" class="contact-illustration-img">
+            </div>
+            <form method="post" action="/submit_form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" required>
               </div>
-              <ul class="actions">
-                <li><input type="submit" value="Send" class="button submit" /></li>
-                <li><input type="reset" value="Reset" /></li>
-              </ul>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea name="message" id="message" rows="5" placeholder="What should we build next?" required></textarea>
+              </div>
+              <button type="submit" class="btn primary">Send Message</button>
             </form>
-          </section>
-          <section>
-            <ul class="contact">
-              <li>
-                <h3>Location</h3>
-                <span>
-                  Raleigh,<br />
-                  North Carolina,<br />
-                  USA
-                </span>
-              </li>
-              <li>
-                <h3>Email</h3>
-                <a href="mailto:caterer.05beeches@icloud.com?subject=Feedback&amp;body=Message" rel="noopener">Send an email</a>
-              </li>
-              <li>
-                <h3>Phone</h3>
-                <span>1CC38ED35746 (encrypted)</span>
-              </li>
-              <li>
-                <h3>Social</h3>
-                <ul class="icons">
-                  <li>
-                    <a href="https://twitter.com/deepak_sai_" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer">
-                      <span class="label">Twitter</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.facebook.com/deepak.pendyala.9" class="icon brands fa-facebook-f" target="_blank" rel="noopener noreferrer">
-                      <span class="label">Facebook</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/deepaksaipendyala" class="icon brands fa-github" target="_blank" rel="noopener noreferrer">
-                      <span class="label">GitHub</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/deepak_sai.zip" class="icon brands fa-instagram" target="_blank" rel="noopener noreferrer">
-                      <span class="label">Instagram</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.linkedin.com/in/deepaksaip" class="icon brands fa-linkedin-in" target="_blank" rel="noopener noreferrer">
-                      <span class="label">LinkedIn</span>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </section>
+          </div>
+          <div class="contact-info">
+            <div class="info-card">
+              <h3>Location</h3>
+              <p>Raleigh, NC, USA</p>
+            </div>
+            <div class="info-card">
+              <h3>Email</h3>
+              <a href="mailto:caterer.05beeches@icloud.com" class="text-link">Send an email</a>
+            </div>
+            <div class="info-card">
+              <h3>Social</h3>
+              <div class="social-links">
+                <a href="https://twitter.com/deepak_sai_" target="_blank" rel="noopener" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/deepaksaipendyala" target="_blank" rel="noopener" aria-label="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/deepaksaip" target="_blank" rel="noopener" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.instagram.com/deepak_sai.zip" target="_blank" rel="noopener" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+            <div class="info-card">
+              <h3>Availability</h3>
+              <p>Open to research collaborations, AI product work, and internships.</p>
+              <a href="https://calendly.com/deepaksaipendyala/30min" target="_blank" rel="noopener" class="btn ghost">Book a Call</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  </div>
+  </main>
 
-  <!-- Footer -->
-  <footer id="footer" class="wrapper style1-alt">
-    <div class="inner">
-      <ul class="menu">
-        <li>Designed 2021–2025 &copy; Deepak Sai Pendyala. All rights reserved.</li>
-        <li>Designed with HTML5 UP</li>
-        <li>
-          <a href="https://github.com/deepaksaipendyala/Portfo" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
-        </li>
-      </ul>
-    </div>
+  <footer>
+    <p>&copy; 2026 Deepak Sai Pendyala. All rights reserved.</p>
+    <p><a href="https://github.com/deepaksaipendyala/Portfo" target="_blank" rel="noopener">View Source</a></p>
   </footer>
 
-  <!-- Scripts (same imports) -->
-  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-  <script src="./static/assets/js/jquery.min.js"></script>
-  <script src="./static/assets/js/jquery.scrollex.min.js"></script>
-  <script src="./static/assets/js/jquery.scrolly.min.js"></script>
-  <script src="./static/assets/js/browser.min.js"></script>
-  <script src="./static/assets/js/breakpoints.min.js"></script>
-  <script src="./static/assets/js/util.js"></script>
-  <script src="./static/assets/js/main.js"></script>
+  <script src="/static/assets/js/script.js"></script>
 </body>
+
 </html>
