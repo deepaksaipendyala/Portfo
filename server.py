@@ -1,4 +1,3 @@
-import csv
 import os
 import re
 from pathlib import Path
@@ -69,17 +68,6 @@ def is_spam(email_body, min_word_count=8):
         return True
     return False
 
-# Save to text file
-def write_to_database(data):
-    with open('./database.txt', mode='a') as db:
-        db.write(f'\n{data["name"]},{data["email"]},{data["message"]}')
-
-# Save to CSV
-def write_to_csv(data):
-    with open('./database.csv', mode='a', newline='') as db:
-        writer = csv.writer(db, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow([data["name"], data["email"], data["message"]])
-
 # Send confirmation to user
 def send_user_email(data):
     recipient = data["email"]
@@ -134,8 +122,6 @@ def submit_form():
             if is_spam(data["message"]):
                 return '❌ Message looks like spam or is too short. Write at least 10 meaningful words.'
 
-            write_to_csv(data)
-            write_to_database(data)
             if resend_api_key:
                 try:
                     send_user_email(data)
@@ -149,7 +135,7 @@ def submit_form():
 
         except Exception as error:
             print(f"[ERROR] {error}")
-            return '❌ Something went wrong while saving your data.'
+            return '❌ Something went wrong while processing your request.'
     else:
         return '❌ Invalid request method. Use POST to submit form.'
 
