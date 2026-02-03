@@ -15,11 +15,22 @@ if resend_api_key:
     resend.api_key = resend_api_key
 
 # Get the base directory (works for both local and Vercel)
+# In Vercel, __file__ points to the deployed file location
 BASE_DIR = Path(__file__).parent.absolute()
 
+# Ensure paths exist, fallback to current working directory if needed
+template_path = BASE_DIR / 'templates'
+static_path = BASE_DIR / 'static'
+
+# If paths don't exist, try using current working directory (for Vercel)
+if not template_path.exists():
+    template_path = Path(os.getcwd()) / 'templates'
+if not static_path.exists():
+    static_path = Path(os.getcwd()) / 'static'
+
 app = Flask(__name__, 
-            template_folder=str(BASE_DIR / 'templates'),
-            static_folder=str(BASE_DIR / 'static'))
+            template_folder=str(template_path),
+            static_folder=str(static_path))
 
 @app.route('/')
 def home():
