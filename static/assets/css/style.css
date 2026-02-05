@@ -656,6 +656,10 @@ footer p {
     .hero-grid {
         grid-template-columns: 1fr;
     }
+
+    .hero-media {
+        order: -1;
+    }
 }
 
 @media screen and (max-width: 900px) {
