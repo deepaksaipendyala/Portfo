@@ -7,6 +7,12 @@
 		<link rel="stylesheet" href="/static/assets/css/main.css" />
 		<link rel="shortcut icon" href="{{url_for('static',filename='favicon.ico')}}">
 		<noscript><link rel="stylesheet" href="/static/assets/css/noscript.css" /></noscript>
+		
+		<!-- Vercel Web Analytics -->
+		<script>
+			window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+		</script>
+		<script defer src="/_vercel/insights/script.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -135,6 +141,12 @@
 			<script src="/static/assets/js/breakpoints.min.js"></script>
 			<script src="/static/assets/js/util.js"></script>
 			<script src="/static/assets/js/main.js"></script>
+			
+			<!-- Vercel Speed Insights -->
+			<script>
+				window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+			</script>
+			<script defer src="/_vercel/speed-insights/script.js"></script>
 
 	</body>
 </html>
