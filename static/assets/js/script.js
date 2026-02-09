@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             storedTrack = null;
         }
-        setTrack(storedTrack || body.dataset.activeTrack || 'ai');
+        const initialTrack = body.dataset.activeTrack || storedTrack || 'ai';
+        setTrack(initialTrack);
         trackButtons.forEach((button) => {
             button.addEventListener('click', () => {
                 setTrack(button.dataset.track);

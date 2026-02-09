@@ -21,7 +21,7 @@
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
-<body data-active-track="ai">
+<body data-active-track="{{ initial_track|default('ai') }}">
   <nav class="site-nav">
     <div class="brand">
       <a class="brand-name" href="#intro">Deepak Sai</a>

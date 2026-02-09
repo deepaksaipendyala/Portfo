@@ -36,6 +36,15 @@ app = Flask(__name__,
 def home():
     return render_template('index.html')
 
+@app.route('/sde')
+def sde_home():
+    return render_template('index.html', initial_track='sde')
+
+@app.route('/ai')
+@app.route('/ds')
+def ai_home():
+    return render_template('index.html', initial_track='ai')
+
 @app.route('/<string:page_name>')
 def html_page(page_name):
     redirects = {
