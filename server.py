@@ -61,7 +61,7 @@ def html_page(page_name):
         'tree': 'https://linktr.ee/deepaksai',
         'linktree': 'https://linktr.ee/deepaksai',
         'youtube': 'https://www.youtube.com/c/GeeksfromIndia?sub_confirmation=1',
-        'youtube': 'https://www.youtube.com/c/GeeksfromIndia?sub_confirmation=1'
+        'aitoolkit': 'https://www.notion.so/AI-Student-Toolkit-2f123d27bd6180d5b8e8c2f4f64f435c?source=copy_link'
     }
     if page_name in redirects:
         return redirect(redirects[page_name])
