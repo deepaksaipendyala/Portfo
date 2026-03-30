@@ -131,7 +131,7 @@ Message:
     
     params: resend.Emails.SendParams = {
         "from": "Deepak Sai Pendyala <forms@deepak.rocks>",
-        "to": ["deepak.pendyala.111@gmail.com"],
+        "to": ["deepaksaipendyala@gmail.com"],
         "subject": "Feedback received!",
         "html": f"<pre>{email_body}</pre>",
         "reply_to": data["email"]
