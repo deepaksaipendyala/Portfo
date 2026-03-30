@@ -15,16 +15,16 @@ if not resend_api_key:
 
 resend.api_key = resend_api_key
 
-print("Testing Resend with custom domain deepaksaip.me...")
+print("Testing Resend with custom domain deepak.rocks...")
 print(f"API Key found: {resend_api_key[:10]}...{resend_api_key[-4:] if len(resend_api_key) > 14 else '***'}")
 
 # Test email parameters
 params: resend.Emails.SendParams = {
-    "from": "Deepak Sai Pendyala <forms@deepaksaip.me>",
+    "from": "Deepak Sai Pendyala <forms@deepak.rocks>",
     "to": ["deepak.pendyala.111@gmail.com"],
     "subject": "Test Email from Portfolio",
-    "html": "<p>This is a test email from your portfolio website using Resend with custom domain deepaksaip.me</p><p>If you received this, it works!</p>",
-    "reply_to": "forms@deepaksaip.me"
+    "html": "<p>This is a test email from your portfolio website using Resend with custom domain deepak.rocks</p><p>If you received this, it works!</p>",
+    "reply_to": "forms@deepak.rocks"
 }
 
 try:
@@ -37,5 +37,5 @@ except Exception as e:
     print(f"Error details: {e}")
     print("\nPossible issues:")
     print("1. API key might be incorrect")
-    print("2. Custom domain deepaksaip.me might not be verified in Resend")
+    print("2. Custom domain deepak.rocks might not be verified in Resend")
     print("3. Check Resend dashboard for domain verification status")

@@ -108,11 +108,11 @@ def send_user_email(data):
     html_content = html_template.substitute({'name': name})
     
     params: resend.Emails.SendParams = {
-        "from": "Deepak Sai Pendyala <forms@deepaksaip.me>",
+        "from": "Deepak Sai Pendyala <forms@deepak.rocks>",
         "to": [recipient],
         "subject": "Your Feedback submitted!",
         "html": html_content,
-        "reply_to": "forms@deepaksaip.me"
+        "reply_to": "forms@deepak.rocks"
     }
     
     email = resend.Emails.send(params)
@@ -130,7 +130,7 @@ Message:
 '''
     
     params: resend.Emails.SendParams = {
-        "from": "Deepak Sai Pendyala <forms@deepaksaip.me>",
+        "from": "Deepak Sai Pendyala <forms@deepak.rocks>",
         "to": ["deepak.pendyala.111@gmail.com"],
         "subject": "Feedback received!",
         "html": f"<pre>{email_body}</pre>",
