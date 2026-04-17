@@ -1,76 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Message Received | Deepak Sai Pendyala</title>
-    <link rel="stylesheet" href="/static/assets/css/style.css">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Vercel Web Analytics -->
-    <script>
-        window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/insights/script.js"></script>
-    
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 2rem;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Received | Deepak Sai Pendyala</title>
 
-        .thank-you-container {
-            max-width: 640px;
-            text-align: center;
-            background: rgba(18, 22, 30, 0.88);
-            border: 2px solid rgba(244, 247, 251, 0.22);
-            border-radius: 24px;
-            padding: 3rem 2.5rem;
-            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
-        }
+  <!-- Fonts -->
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-        .thank-you-container h1 {
-            font-family: 'Kalam', cursive;
-            font-size: clamp(2.4rem, 4vw, 3.6rem);
-            margin-bottom: 1rem;
-            color: #f4f7fb;
-        }
+  <!-- Styles -->
+  <link rel="stylesheet" href="/static/assets/css/style.css">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 
-        .thank-you-container p {
-            color: #b9c2cf;
-            margin-bottom: 2rem;
-        }
-
-        .thank-you-img {
-            width: 100%;
-            max-width: 260px;
-            border-radius: 16px;
-            margin: 0 auto 2rem;
-            border: 1px solid rgba(244, 247, 251, 0.2);
-        }
-    </style>
+  <!-- Vercel Web Analytics -->
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 
-<body>
-    <div class="thank-you-container">
-        <img src="/static/images/thankyou_stickman.jpeg" alt="Thank you illustration" class="thank-you-img">
-        <h1>Message Sent</h1>
-        <p>Thanks for reaching out. I have received your message and will respond as soon as possible.</p>
-        <a href="/" class="btn primary">Back to Home</a>
-    </div>
-    
-    <!-- Vercel Speed Insights -->
-    <script>
-        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
-    </script>
-    <script defer src="/_vercel/speed-insights/script.js"></script>
+<body class="thank-you-page">
+  <canvas id="neural-canvas"></canvas>
+  <div class="cursor-glow"></div>
+
+  <div class="thank-you-container">
+    <img src="/static/images/thankyou_stickman.jpeg" alt="Thank you illustration" class="thank-you-img">
+    <h1>Message Sent</h1>
+    <p>Thanks for reaching out. I got your message and will reply as soon as I can.</p>
+    <a href="/" class="btn primary">Back to Home</a>
+  </div>
+
+  <script src="/static/assets/js/script.js"></script>
+
+  <!-- Vercel Speed Insights -->
+  <script>
+    window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 
 </html>

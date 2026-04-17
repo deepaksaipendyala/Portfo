@@ -37,5 +37,8 @@ Thumbs.db
 # Test files
 test_resend.py
 
+# Local design prototypes
+New_design/
+
 # Vercel
 .vercel
